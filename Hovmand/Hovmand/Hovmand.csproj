@@ -107,6 +107,14 @@
     <None Include="Hovmand_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Libraries\AddOns.dll" />
+    <Content Include="Libraries\Commands.dll" />
+    <Content Include="Libraries\Controllers.dll" />
+    <Content Include="Libraries\Data.dll" />
+    <Content Include="Libraries\DataSources.dll" />
+    <Content Include="Libraries\Extensions.dll" />
+    <Content Include="Libraries\Model.dll" />
+    <Content Include="Libraries\ViewModel.dll" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -121,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\App\FileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\App\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
