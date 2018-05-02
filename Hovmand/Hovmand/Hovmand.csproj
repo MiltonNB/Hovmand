@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\App\Handler.cs" />
     <Compile Include="View\App\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -150,7 +151,6 @@
     <Folder Include="Model\App\" />
     <Folder Include="Model\Base\" />
     <Folder Include="Model\Domain\" />
-    <Folder Include="ViewModel\App\" />
     <Folder Include="ViewModel\Base\" />
     <Folder Include="ViewModel\Domain\" />
     <Folder Include="View\Domain\" />
