@@ -97,7 +97,9 @@
     </Compile>
     <Compile Include="Model\App\Customer.cs" />
     <Compile Include="Model\App\Offer.cs" />
+    <Compile Include="Model\App\Pipeline.cs" />
     <Compile Include="Model\App\Product.cs" />
+    <Compile Include="Model\App\StatusEnum.cs" />
     <Compile Include="Model\App\User.cs" />
     <Compile Include="ViewModel\App\Handler.cs" />
     <Compile Include="View\App\MainPage.xaml.cs">
