@@ -12,8 +12,9 @@ namespace Hovmand.Model.App
         private string _information;
         private float _price;
         private string _date;
-        
-        public Offer(int offerID, List<string> caseHistoryList, string caseOwner, string information, List<string> historyList, float price, string date)
+
+        public Offer(int offerID, List<string> caseHistoryList, string caseOwner, string information,
+            List<string> historyList, float price, string date)
         {
             _offerID = offerID;
             _caseHistoryList = caseHistoryList;
@@ -24,4 +25,5 @@ namespace Hovmand.Model.App
             _date = date;
 
         }
+    }
 }

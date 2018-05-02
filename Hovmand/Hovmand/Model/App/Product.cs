@@ -2,17 +2,41 @@
 {
     public class Product
     {
+        private int _productID;
+        private string _title;
+        private string _information;
+        private float _price;
+
         public Product(int productID, string title, string information, float price)
         {
-            ProductID = productID;
-            Title = title;
-            Information = information;
-            Price = price;
+            _productID = productID;
+            _title = title;
+            _information = information;
+            _price = price;
         }
 
-        public int ProductID { get; set; }
-        public string Title { get; set; }
-        public string Information { get; set; }
-        public float Price { get; set; }
+        public int ProductID
+        {
+            get { return _productID; }
+            set { _productID = value; }
+        }
+
+        public string Title
+        {
+            get { return _title; }
+            set { _title = value; }
+        }
+
+        public string Information
+        {
+            get { return _information; }
+            set { _information = value; }
+        }
+
+        public float Price
+        {
+            get { return _price; }
+            set { _price = value; }
+        }
     }
 }
