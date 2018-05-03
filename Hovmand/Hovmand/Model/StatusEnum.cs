@@ -1,4 +1,4 @@
-﻿namespace Hovmand.Model.App
+﻿namespace Hovmand.Model
 {
     public enum StatusEnum
     {

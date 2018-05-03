@@ -2,12 +2,9 @@
 {
     public class Customer
     {
-        private int _customerID;
-        
-
         public Customer(int customerID, int cvr, string companyName, string address, int phone, string mail)
         {
-            _customerID = customerID;
+            CustomerID = customerID;
             CVR = cvr;
             CompanyName = companyName;
             Address = address;

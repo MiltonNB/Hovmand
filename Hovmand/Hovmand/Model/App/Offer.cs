@@ -11,7 +11,7 @@ namespace Hovmand.Model.App
         private string _caseOwner;
         private string _information;
         private float _price;
-        private string _date;
+        private string _date;   
 
         public Offer(int offerID, List<string> caseHistoryList, string caseOwner, string information,
             List<string> historyList, float price, string date)
