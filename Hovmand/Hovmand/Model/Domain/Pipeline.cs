@@ -1,9 +1,12 @@
-﻿namespace Hovmand.Model.Domain
+﻿using Hovmand.Model.Base;
+
+namespace Hovmand.Model.Domain
 {
-    public class Pipeline
+    public class Pipeline : DomainAppBase
     {
-        public Pipeline(int pipelineID, StatusEnum status, string information, string date, string lastEditDate)
+        public Pipeline(int key, int pipelineID, StatusEnum status, string information, string date, string lastEditDate)
         {
+            Key = key;
             PipelineID = pipelineID;
             Status = status;
             Information = information;
@@ -20,5 +23,9 @@
         public string Date { get; set; }
 
         public string LastEditDate { get; set; }
+        public override void SetDefaultValues()
+        {
+            Key = NullKey;
+        }
     }
 }
