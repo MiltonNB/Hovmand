@@ -17,11 +17,9 @@ namespace Hovmand.Model.App
 
         public bool MatchString(string input, string toMatch) //Sammenligner 2 strings, hvor den hasher input
         {
-            var inputBytes = Encoding.ASCII.GetBytes(input); //Laver input string om til bytes igen
-            var inputHashed = _sha1Provider.ComputeHash(inputBytes); //Hasher bytes som er taget fra input string
-            var inputHashedString = Encoding.ASCII.GetString(inputHashed); //Tilbage til en string
+            var inputHashed = HashString(input); //Bruger HashString metoden til at hashe
 
-            if (inputHashedString == toMatch) //Hvis de 2 matcher
+            if (inputHashed == toMatch) //Hvis de 2 matcher
             {
                 return true;
             }
