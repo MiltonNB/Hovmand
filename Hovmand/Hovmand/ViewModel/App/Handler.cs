@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Hovmand.Model.App;
+using Hovmand.Model.Domain;
 
 namespace Hovmand.ViewModel.App
 {
