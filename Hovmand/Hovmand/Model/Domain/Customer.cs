@@ -23,8 +23,5 @@
         public int Phone { get; set; }
 
         public string Mail { get; set; }
-
-
-
     }
 }
