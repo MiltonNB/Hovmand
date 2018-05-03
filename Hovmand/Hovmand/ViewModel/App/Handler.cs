@@ -1,52 +1,55 @@
-﻿namespace Hovmand.ViewModel.App
+﻿using System.Collections.Generic;
+using Hovmand.Model.App;
+
+namespace Hovmand.ViewModel.App
 {
     public class Handler
     {
         // TODO - method types are temporary
 
-        public void GetLeads()
+        public List<Lead> GetLeads() //returns all leads from db
+        {
+            return null;
+        }
+
+        public void SelectLeads() //?
         {
             
         }
 
-        public void SelectLeads()
+        public void SaveOffer(int leadID) //saves offer
+        {
+
+        }
+
+        public Lead GetLeadByID(int ID) //returns lead details
+        {
+            return null;
+        }
+
+        public void EditLock(int ID) //locks lead for edit
         {
             
         }
 
-        public void SaveOffer(int selectedLead)
-        {
-
-        }
-
-        public string GetLeadByID(int ID)
-        {
-            return "";
-        }
-
-        public void EditLock(int ID)
+        public void EditUnlock(int ID) //unlocks lead for edit
         {
             
         }
 
-        public void EditUnlock(int ID)
+        private void SendEmail(string recipient) //sends email
         {
             
         }
 
-        private void SendEmail(string recipient)
+        public void ChangeLeadStatus(int LeadID) //changes status on lead
         {
             
         }
 
-        public void ChangeLeadStatus(int LeadID)
+        public string SaveConfirmation() //?
         {
-            
-        }
-
-        public string SaveConfirmation()
-        {
-            return "";
+            return null;
         }
     }
 }
