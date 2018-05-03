@@ -31,7 +31,7 @@ namespace Hovmand
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Login));
+            Frame.Navigate(typeof(LoginPage));
         }
     }
 }
