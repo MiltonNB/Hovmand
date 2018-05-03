@@ -5,23 +5,31 @@
     xmlns:local="using:Hovmand.View.App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Width="300" Height="500" MinWidth="300" MaxWidth="300" MinHeight="500" MaxHeight="500"> 
+    mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-        </Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Text="HOVMAND" FontWeight="Bold" FontSize="54" TextAlignment="Center" Foreground="#af1e23"/>
+            <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
+            <TextBlock Text="Enter your username below" Margin="0, 0, 0, 10"
+                       TextWrapping="Wrap" Width="300"
+                       TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="UsernameTextBox" Margin="4" Width="250"/>
+            <TextBlock Text="Enter your password below" Margin="20"
+                       TextWrapping="Wrap" Width="300"
+                       TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="PasswordTextBox" Margin="4" Width="250"/>
+            <Button x:Name="SignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
+                    Click="SignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
+            <TextBlock x:Name="ForgotPasswordButtonTextBlock" Text="Forgot password?"
+                       PointerPressed="ForgotPasswordButton_Click"
+                       Foreground="DodgerBlue"
+                       TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        </StackPanel>
     </Grid>
 </Page>

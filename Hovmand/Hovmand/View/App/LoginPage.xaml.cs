@@ -25,7 +25,16 @@ namespace Hovmand.View.App
         public LoginPage()
         {
             this.InitializeComponent();
-            
+        }
+
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        {
+            ErrorMessage.Text = "";
+        }
+
+        private void ForgotPasswordButton_Click(object sender, PointerRoutedEventArgs e)
+        {
+            ErrorMessage.Text = "";
         }
     }
 }
