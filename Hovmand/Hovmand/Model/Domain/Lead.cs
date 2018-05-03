@@ -1,12 +1,9 @@
-﻿using Hovmand.Model.Base;
-
-namespace Hovmand.Model.Domain
+﻿namespace Hovmand.Model.Domain
 {
-    public class Lead : DomainAppBase
+    public class Lead
     {
-        public Lead(int key, int leadID, StatusEnum status, string information)
+        public Lead(int leadID, StatusEnum status, string information)
         {
-            Key = key;
             LeadID = leadID;
             Status = status;
             Information = information;
@@ -15,9 +12,5 @@ namespace Hovmand.Model.Domain
         public int LeadID { get; set; }
         public StatusEnum Status { get; set; }
         public string Information { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
     }
 }

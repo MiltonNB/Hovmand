@@ -1,12 +1,9 @@
-﻿using Hovmand.Model.Base;
-
-namespace Hovmand.Model.Domain
+﻿namespace Hovmand.Model.Domain
 {
-    public class Product : DomainAppBase
+    public class Product
     {
-        public Product(int key, int productID, string title, string information, float price)
+        public Product(int productID, string title, string information, float price)
         {
-            Key = key;
             ProductID = productID;
             Title = title;
             Information = information;
@@ -20,9 +17,5 @@ namespace Hovmand.Model.Domain
         public string Information { get; set; }
 
         public float Price { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
     }
 }
