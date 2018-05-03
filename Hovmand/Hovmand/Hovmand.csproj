@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Catalog\Base\CatalogBase.cs" />
     <Compile Include="Model\Domain\Customer.cs" />
     <Compile Include="Model\Domain\Lead.cs" />
     <Compile Include="Model\Domain\Offer.cs" />
@@ -113,8 +114,8 @@
     <Compile Include="View\App\LeadPage.xaml.cs">
       <DependentUpon>LeadPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\App\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="View\App\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\App\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -175,7 +176,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\App\Login.xaml">
+    <Page Include="View\App\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +208,8 @@
   <ItemGroup>
     <Folder Include="DataBase\" />
     <Folder Include="Model\App\" />
+    <Folder Include="Model\Catalog\DomainCatalogs\" />
+    <Folder Include="Model\Database\" />
     <Folder Include="ViewModel\Base\" />
     <Folder Include="ViewModel\Domain\" />
     <Folder Include="View\Domain\" />

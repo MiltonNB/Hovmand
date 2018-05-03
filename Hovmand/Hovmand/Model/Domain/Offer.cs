@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
 {
-    public class Offer
+    public class Offer : DomainAppBase
     {
-        public Offer(int offerID,string caseOwner, string information, float price, string date)
+        public Offer(int key, int offerID,string caseOwner, string information, float price, string date)
         {
+            Key = key;
             OfferID = offerID;
             CaseHistoryList = new List<string>();
             HistoryList = new List<string>();
@@ -22,5 +24,9 @@ namespace Hovmand.Model.Domain
         public string Information { get; set; }
         public float Price { get; set; }
         public string Date { get; set; }
+        public override void SetDefaultValues()
+        {
+            Key = NullKey;
+        }
     }
 }
