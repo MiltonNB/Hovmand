@@ -95,11 +95,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interface\AccessType.cs" />
-    <Compile Include="Interface\IItemAccess.cs" />
-    <Compile Include="Interface\ISecurityService.cs" />
-    <Compile Include="Interface\IUser.cs" />
-    <Compile Include="Interface\IUserType.cs" />
     <Compile Include="Model\Domain\Customer.cs" />
     <Compile Include="Model\Domain\Lead.cs" />
     <Compile Include="Model\Domain\Offer.cs" />
