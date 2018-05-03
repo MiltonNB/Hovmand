@@ -1,4 +1,4 @@
-﻿namespace Hovmand.Model.App
+﻿namespace Hovmand.Model.Domain
 {
     public class Product
     {

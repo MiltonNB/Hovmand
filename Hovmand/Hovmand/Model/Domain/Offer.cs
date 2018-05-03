@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 
-namespace Hovmand.Model.App
+namespace Hovmand.Model.Domain
 {
     public class Offer
     {
