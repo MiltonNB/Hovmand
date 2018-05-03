@@ -1,9 +1,12 @@
-﻿namespace Hovmand.Model.Domain
+﻿using Hovmand.Model.Base;
+
+namespace Hovmand.Model.Domain
 {
-    public class User
+    public class User : DomainAppBase
     {
-        public User(int userID, string firstName, string lastName, string title, string email)
+        public User(int key, int userID, string firstName, string lastName, string title, string email)
         {
+            Key = key;
             UserID = userID;
             FirstName = firstName;
             LastName = lastName;
@@ -20,5 +23,9 @@
         public string Title { get; set; }
 
         public string Email { get; set; }
+        public override void SetDefaultValues()
+        {
+            Key = NullKey;
+        }
     }
 }
