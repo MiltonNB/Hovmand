@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\App\PasswordHash.cs" />
     <Compile Include="Model\Catalog\Base\CatalogBase.cs" />
     <Compile Include="Model\Domain\Customer.cs" />
     <Compile Include="Model\Domain\Lead.cs" />
@@ -207,7 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataBase\" />
-    <Folder Include="Model\App\" />
     <Folder Include="Model\Catalog\DomainCatalogs\" />
     <Folder Include="Model\Database\" />
     <Folder Include="ViewModel\Base\" />
