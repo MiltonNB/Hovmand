@@ -14,6 +14,11 @@ namespace Hovmand.Model.Domain
             LastEditDate = lastEditDate;
         }
 
+        public Pipeline() : base()
+        {
+
+        }
+
         public int PipelineID { get; set; }
 
         public StatusEnum Status { get; set; }

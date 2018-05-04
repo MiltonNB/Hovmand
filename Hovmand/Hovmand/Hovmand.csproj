@@ -97,6 +97,13 @@
     </Compile>
     <Compile Include="Model\App\PasswordHash.cs" />
     <Compile Include="Model\Catalog\Base\CatalogBase.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\CustomerCatalog.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\LeadCatalog.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\OfferCatalog.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\PipelineCatalog.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\ProductCatalog.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\UserCatalog.cs" />
+    <Compile Include="Model\Database\HovmandDBContext.cs" />
     <Compile Include="Model\Domain\Customer.cs" />
     <Compile Include="Model\Domain\Lead.cs" />
     <Compile Include="Model\Domain\Offer.cs" />
@@ -199,6 +206,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore">
+      <Version>2.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.8</Version>
     </PackageReference>
@@ -208,8 +218,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataBase\" />
-    <Folder Include="Model\Catalog\DomainCatalogs\" />
-    <Folder Include="Model\Database\" />
     <Folder Include="ViewModel\Base\" />
     <Folder Include="ViewModel\Domain\" />
     <Folder Include="View\Domain\" />

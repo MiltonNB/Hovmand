@@ -13,6 +13,11 @@ namespace Hovmand.Model.Domain
             Price = price;
         }
 
+        public Product() : base()
+        {
+
+        }
+
         public int ProductID { get; set; }
 
         public string Title { get; set; }

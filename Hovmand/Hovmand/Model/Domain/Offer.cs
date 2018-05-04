@@ -17,6 +17,11 @@ namespace Hovmand.Model.Domain
             Date = date;
         }
 
+        public Offer() : base()
+        {
+
+        }
+
         public int OfferID { get; set; }
         public List<string> CaseHistoryList { get; set; }
         public List<string> HistoryList { get; set; }

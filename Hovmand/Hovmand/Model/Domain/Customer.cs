@@ -15,6 +15,11 @@ namespace Hovmand.Model.Domain
             Mail = mail;
         }
 
+        public Customer() : base()
+        {
+            
+        }
+
         public int CustomerID { get; set; }
 
         public int CVR { get; set; }

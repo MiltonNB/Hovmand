@@ -12,6 +12,11 @@ namespace Hovmand.Model.Domain
             Information = information;
         }
 
+        public Lead() : base()
+        {
+
+        }
+
         public int LeadID { get; set; }
         public StatusEnum Status { get; set; }
         public string Information { get; set; }

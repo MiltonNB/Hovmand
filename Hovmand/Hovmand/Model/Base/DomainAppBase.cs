@@ -9,5 +9,10 @@ namespace Hovmand.Model.Base
             get { return Key; }
             set { Key = value; }
         }
+
+        protected DomainAppBase() : base()
+        {
+            
+        }
     }
 }
