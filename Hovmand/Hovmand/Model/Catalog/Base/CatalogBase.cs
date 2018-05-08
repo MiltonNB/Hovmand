@@ -6,7 +6,7 @@ using Model.Implementation;
 
 namespace Hovmand.Model.Catalog.Base
 {
-    public class CatalogBase<T> : EFCorePersistableCatalogAsync<HovmandDBContext, T, T, T> 
+    public class CatalogBase<T> : EFCorePersistableCatalogAsync<HovmanddbContext, T, T, T> 
         where T : class, IStorable, ICopyable, new()
     {
         public override T CreateDomainObjectFromViewDataObject(T obj)

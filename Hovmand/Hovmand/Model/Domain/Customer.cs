@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Hovmand
+namespace Hovmand.Model.Domain
 {
     public partial class Customer
     {
