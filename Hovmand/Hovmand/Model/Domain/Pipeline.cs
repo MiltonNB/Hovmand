@@ -1,36 +1,21 @@
-﻿using Hovmand.Model.Base;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
-    public class Pipeline : DomainAppBase
+    public partial class Pipeline
     {
-        public Pipeline(int key, int pipelineID, StatusEnum status, string information, string date, string lastEditDate)
+        public Pipeline()
         {
-            Key = key;
-            PipelineID = pipelineID;
-            Status = status;
-            Information = information;
-            Date = date;
-            LastEditDate = lastEditDate;
+            Leads = new HashSet<Lead>();
         }
 
-        public Pipeline() : base()
-        {
-
-        }
-
-        public int PipelineID { get; set; }
-
-        public StatusEnum Status { get; set; }
-
+        public int PipelineId { get; set; }
+        public string Status { get; set; }
         public string Information { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime DateLastEdit { get; set; }
 
-        public string Date { get; set; }
-
-        public string LastEditDate { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
+        public ICollection<Lead> Leads { get; set; }
     }
 }

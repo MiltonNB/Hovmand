@@ -1,37 +1,18 @@
-﻿using System.Collections.Generic;
-using Hovmand.Model.Base;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
-    public class Offer : DomainAppBase
+    public partial class Offer
     {
-        public Offer(int key, int offerID,string caseOwner, string information, float price, string date)
-        {
-            Key = key;
-            OfferID = offerID;
-            CaseHistoryList = new List<string>();
-            HistoryList = new List<string>();
-            CaseOwner = caseOwner;
-            Information = information;
-            Price = price;
-            Date = date;
-        }
-
-        public Offer() : base()
-        {
-
-        }
-
-        public int OfferID { get; set; }
-        public List<string> CaseHistoryList { get; set; }
-        public List<string> HistoryList { get; set; }
-        public string CaseOwner { get; set; }
+        public int OfferId { get; set; }
         public string Information { get; set; }
-        public float Price { get; set; }
-        public string Date { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
+        public double Price { get; set; }
+        public DateTime Date { get; set; }
+        public int FkProductId { get; set; }
+        public int FkLeadId { get; set; }
+
+        public Lead FkLead { get; set; }
+        public Product FkProduct { get; set; }
     }
 }

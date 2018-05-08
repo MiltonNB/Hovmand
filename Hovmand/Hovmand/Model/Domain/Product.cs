@@ -1,33 +1,21 @@
-﻿using Hovmand.Model.Base;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
-    public class Product : DomainAppBase
+    public partial class Product
     {
-        public Product(int key, int productID, string title, string information, float price)
+        public Product()
         {
-            Key = key;
-            ProductID = productID;
-            Title = title;
-            Information = information;
-            Price = price;
+            Offers = new HashSet<Offer>();
         }
 
-        public Product() : base()
-        {
-
-        }
-
-        public int ProductID { get; set; }
-
+        public int ProductId { get; set; }
         public string Title { get; set; }
-
         public string Information { get; set; }
+        public double Price { get; set; }
+        public int InStock { get; set; }
 
-        public float Price { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
+        public ICollection<Offer> Offers { get; set; }
     }
 }

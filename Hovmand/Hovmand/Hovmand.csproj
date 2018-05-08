@@ -96,6 +96,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Configuration\App\AppConfig.cs" />
+    <Compile Include="Model\Domain\Contact.cs" />
+    <Compile Include="Model\Domain\Customer.cs" />
+    <Compile Include="Model\Database\HovmanddbContext.cs" />
+    <Compile Include="Model\Domain\Lead.cs" />
+    <Compile Include="Model\Domain\Location.cs" />
     <Compile Include="Model\App\PasswordHash.cs" />
     <Compile Include="Model\Catalog\Base\CatalogBase.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\CustomerCatalog.cs" />
@@ -104,15 +109,12 @@
     <Compile Include="Model\Catalog\DomainCatalogs\PipelineCatalog.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\ProductCatalog.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\UserCatalog.cs" />
-    <Compile Include="Model\Database\HovmandDBContext.cs" />
-    <Compile Include="Model\Domain\Customer.cs" />
-    <Compile Include="Model\Domain\Lead.cs" />
+    <Compile Include="Model\StatusEnum.cs" />
+    <Compile Include="Model\Base\DomainAppBase.cs" />
     <Compile Include="Model\Domain\Offer.cs" />
     <Compile Include="Model\Domain\Pipeline.cs" />
     <Compile Include="Model\Domain\Product.cs" />
-    <Compile Include="Model\StatusEnum.cs" />
     <Compile Include="Model\Domain\User.cs" />
-    <Compile Include="Model\Base\DomainAppBase.cs" />
     <Compile Include="ViewModel\App\DBHandler.cs" />
     <Compile Include="ViewModel\App\EmailHandler.cs" />
     <Compile Include="ViewModel\App\LockHandler.cs" />
@@ -149,6 +151,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="efpt.config.json" />
     <None Include="Hovmand_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

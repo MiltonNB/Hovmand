@@ -1,28 +1,26 @@
-﻿using Hovmand.Model.Base;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
-    public class Lead : DomainAppBase
+    public partial class Lead
     {
-        public Lead(int key, int leadID, StatusEnum status, string information)
+        public Lead()
         {
-            Key = key;
-            LeadID = leadID;
-            Status = status;
-            Information = information;
+            Offers = new HashSet<Offer>();
         }
 
-        public Lead() : base()
-        {
-
-        }
-
-        public int LeadID { get; set; }
-        public StatusEnum Status { get; set; }
+        public int LeadId { get; set; }
+        public string Status { get; set; }
         public string Information { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
+        public DateTime DateAdded { get; set; }
+        public int FkCustomersId { get; set; }
+        public int FkUserId { get; set; }
+        public int FkPipelineId { get; set; }
+
+        public Customer FkCustomers { get; set; }
+        public Pipeline FkPipeline { get; set; }
+        public User FkUser { get; set; }
+        public ICollection<Offer> Offers { get; set; }
     }
 }

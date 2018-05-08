@@ -1,39 +1,22 @@
-﻿using Hovmand.Model.Base;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
-    public class User : DomainAppBase
+    public partial class User
     {
-        public User(int key, int userID, string firstName, string lastName, string title, string email, string password)
+        public User()
         {
-            Key = key;
-            UserID = userID;
-            FirstName = firstName;
-            LastName = lastName;
-            Title = title;
-            Email = email;
-            Password = password;
+            Leads = new HashSet<Lead>();
         }
 
-        public User() : base()
-        {
-
-        }
-
-        public int UserID { get; set; }
-
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
+        public int UserId { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
         public string Title { get; set; }
-
         public string Email { get; set; }
-
         public string Password { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
+
+        public ICollection<Lead> Leads { get; set; }
     }
 }

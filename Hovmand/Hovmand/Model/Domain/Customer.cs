@@ -1,39 +1,26 @@
-﻿using Hovmand.Model.Base;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
-    public class Customer : DomainAppBase
+    public partial class Customer
     {
-        public Customer(int key, int customerID, int cvr, string companyName, string address, int phone, string mail)
+        public Customer()
         {
-            Key = key;
-            CustomerID = customerID;
-            CVR = cvr;
-            CompanyName = companyName;
-            Address = address;
-            Phone = phone;
-            Mail = mail;
+            Leads = new HashSet<Lead>();
         }
 
-        public Customer() : base()
-        {
-            
-        }
-
-        public int CustomerID { get; set; }
-
-        public int CVR { get; set; }
-
+        public int CustomerId { get; set; }
+        public int Cvr { get; set; }
         public string CompanyName { get; set; }
-
         public string Address { get; set; }
-
         public int Phone { get; set; }
-
         public string Mail { get; set; }
-        public override void SetDefaultValues()
-        {
-            Key = NullKey;
-        }
+        public int FkContactId { get; set; }
+        public int FkLocationId { get; set; }
+
+        public Contact FkContact { get; set; }
+        public Location FkLocation { get; set; }
+        public ICollection<Lead> Leads { get; set; }
     }
 }
