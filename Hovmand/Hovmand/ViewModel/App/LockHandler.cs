@@ -6,14 +6,20 @@ namespace Hovmand.ViewModel.App
 {
     public class LockHandler
     {
-        public void EditLock(int ID) //locks lead for edit
+        public void LockLead(int leadID) //locks lead for edit
         {
-            
+            var dbHandler = new DBHandler();
+            var lead = dbHandler.GetLeadByID(leadID);
+
+            //Todo- Lock for edit
         }
 
-        public void EditUnlock(int ID) //unlocks lead for edit
+        public void ReleaseLock(int leadID) //unlocks lead for edit
         {
-            
+            var dbHandler = new DBHandler();
+            var lead = dbHandler.GetLeadByID(leadID);
+
+            //Todo- Release lock
         }
     }
 }

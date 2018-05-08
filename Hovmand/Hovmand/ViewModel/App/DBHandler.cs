@@ -5,6 +5,12 @@ namespace Hovmand.ViewModel.App
 {
     public class DBHandler
     {
+
+        public Lead GetLeadByID(int ID) //returns lead details
+        {
+            return null;
+        }
+
         public List<Lead> GetLeads() //returns all leads from db
         {
             return null;
@@ -18,11 +24,6 @@ namespace Hovmand.ViewModel.App
         public void SaveOffer(int leadID) //saves offer
         {
 
-        }
-
-        public Lead GetLeadByID(int ID) //returns lead details
-        {
-            return null;
         }
 
         public void ChangeLeadStatus(int LeadID) //changes status on lead
