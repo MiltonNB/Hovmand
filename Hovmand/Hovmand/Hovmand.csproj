@@ -113,7 +113,9 @@
     <Compile Include="Model\StatusEnum.cs" />
     <Compile Include="Model\Domain\User.cs" />
     <Compile Include="Model\Base\DomainAppBase.cs" />
-    <Compile Include="ViewModel\App\Handler.cs" />
+    <Compile Include="ViewModel\App\DBHandler.cs" />
+    <Compile Include="ViewModel\App\EmailHandler.cs" />
+    <Compile Include="ViewModel\App\LockHandler.cs" />
     <Compile Include="View\App\CustomerPage.xaml.cs">
       <DependentUpon>CustomerPage.xaml</DependentUpon>
     </Compile>
