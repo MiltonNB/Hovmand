@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Configuration\App\AppConfig.cs" />
     <Compile Include="Model\App\PasswordHash.cs" />
     <Compile Include="Model\Catalog\Base\CatalogBase.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\CustomerCatalog.cs" />
@@ -168,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\App\AppResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\App\CustomerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

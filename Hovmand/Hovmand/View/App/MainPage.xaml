@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Hovmand.MainPage"
+    x:Class="Hovmand.View.App.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Hovmand"
@@ -7,9 +7,41 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <!--<vm:AppViewModel/>-->
+    </Page.DataContext>
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../App/AppResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <NavigationView CompactModeThresholdWidth="600">
-            
+        
+        <NavigationView Header="#"
+                        Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+                        OpenPaneLength="150"
+                        CompactModeThresholdWidth="860"
+                        SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}"
+                        ExpandedModeThresholdWidth="3840">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Globe" Content="OverView" Tag="OverView"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Memo" Content="Leads" Tag="LeadsView"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Customers" Tag="CustomerView"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="OtherUser" Content="Employees" Tag="EmployeeView"/>
+            </NavigationView.MenuItems>
+
+            <Frame x:Name="AppFrame">
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition/>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
         </NavigationView>
     </Grid>
 </Page>
