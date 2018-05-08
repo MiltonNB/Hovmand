@@ -21,10 +21,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
-        <NavigationView Header="#"
+        <NavigationView Header="Hovmand"
                         Background="{ThemeResource SystemControlAcrylicWindowBrush}"
                         OpenPaneLength="150"
-                        CompactModeThresholdWidth="860"
+                        CompactModeThresholdWidth="1280"
                         SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}"
                         ExpandedModeThresholdWidth="3840">
             <NavigationView.MenuItems>
