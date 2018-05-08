@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Hovmand.Model.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Hovmand
+namespace Hovmand.Model.Database
 {
     public partial class HovmanddbContext : DbContext
     {
