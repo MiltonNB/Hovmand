@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
 {
-    public partial class Lead
+    public partial class Lead : DomainAppBase
     {
         public Lead()
         {
@@ -22,5 +23,9 @@ namespace Hovmand.Model.Domain
         public Pipeline FkPipeline { get; set; }
         public User FkUser { get; set; }
         public ICollection<Offer> Offers { get; set; }
+        public override void SetDefaultValues()
+        {
+            LeadId = NullKey;
+        }
     }
 }

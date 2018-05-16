@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Configuration\App\AppConfig.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\CatalogInstance.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\ContactCatalog.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\LocationCatalog.cs" />
     <Compile Include="Model\Domain\Contact.cs" />

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
 {
-    public partial class Pipeline
+    public partial class Pipeline : DomainAppBase
     {
         public Pipeline()
         {
@@ -17,5 +18,9 @@ namespace Hovmand.Model.Domain
         public DateTime DateLastEdit { get; set; }
 
         public ICollection<Lead> Leads { get; set; }
+        public override void SetDefaultValues()
+        {
+            PipelineId = NullKey;
+        }
     }
 }
