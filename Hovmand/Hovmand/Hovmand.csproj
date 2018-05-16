@@ -242,7 +242,8 @@
   <ItemGroup>
     <Folder Include="DataBase\" />
     <Folder Include="ViewModel\Base\" />
-    <Folder Include="ViewModel\Domain\" />
+    <Folder Include="ViewModel\Data\" />
+    <Folder Include="ViewModel\Page\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AddOns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
