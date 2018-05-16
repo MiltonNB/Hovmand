@@ -7,9 +7,9 @@
     xmlns:vm="using:Hovmand.ViewModel.App"
     mc:Ignorable="d">
 
-    <Page.DataContext>
-        <!--<vm:FileViewModel/>-->
-    </Page.DataContext>
+    <!--<Page.DataContext>
+        --><!--<vm:FileViewModel/>--><!--
+    </Page.DataContext>-->
 
     <Page.Resources>
         <ResourceDictionary>
