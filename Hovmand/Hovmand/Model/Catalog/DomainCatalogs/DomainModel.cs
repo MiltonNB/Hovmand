@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Hovmand.Model.Catalog.DomainCatalogs
 {
-    public class CatalogInstance
+    public class DomainModel
     {
         private ContactCatalog _contactCatalog;
         private CustomerCatalog _customerCatalog;
@@ -14,7 +14,7 @@ namespace Hovmand.Model.Catalog.DomainCatalogs
         private ProductCatalog _productCatalog;
         private UserCatalog _userCatalog;
 
-        private CatalogInstance()
+        private DomainModel()
         {
             _contactCatalog = new ContactCatalog();
             _customerCatalog = new CustomerCatalog();
@@ -40,17 +40,17 @@ namespace Hovmand.Model.Catalog.DomainCatalogs
         public event Action SaveBegins;
         public event Action SaveEnds;
 
-        private static CatalogInstance _instance;
-        public static CatalogInstance Instance
+        private static DomainModel _instance;
+        public static DomainModel Instance
         {
             get
             {
-                _instance = _instance ?? (_instance = new CatalogInstance());
+                _instance = _instance ?? (_instance = new DomainModel());
                 return _instance;
             }
         }
 
-        public static CatalogInstance Catalogs { get { return Instance; } }
+        public static DomainModel Catalogs { get { return Instance; } }
 
         public async Task LoadAsync()
         {

@@ -96,7 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Configuration\App\AppConfig.cs" />
-    <Compile Include="Model\Catalog\DomainCatalogs\CatalogInstance.cs" />
+    <Compile Include="Model\Catalog\DomainCatalogs\DomainModel.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\ContactCatalog.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\LocationCatalog.cs" />
     <Compile Include="Model\Domain\Contact.cs" />
@@ -121,6 +121,22 @@
     <Compile Include="ViewModel\App\DBHandler.cs" />
     <Compile Include="ViewModel\App\EmailHandler.cs" />
     <Compile Include="ViewModel\App\LockHandler.cs" />
+    <Compile Include="ViewModel\Data\ContactDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\CustomerDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\LeadDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\LocationDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\OfferDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\PipelineDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\ProductDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\UserDataViewModel.cs" />
+    <Compile Include="ViewModel\Page\ContactPageViewModel.cs" />
+    <Compile Include="ViewModel\Page\CustomerPageViewModel.cs" />
+    <Compile Include="ViewModel\Page\LeadPageViewModel.cs" />
+    <Compile Include="ViewModel\Page\LocationPageViewModel.cs" />
+    <Compile Include="ViewModel\Page\OfferPageViewModel.cs" />
+    <Compile Include="ViewModel\Page\PipelinePageViewModel.cs" />
+    <Compile Include="ViewModel\Page\ProductPageViewModel.cs" />
+    <Compile Include="ViewModel\Page\UserPageViewModel.cs" />
     <Compile Include="View\App\FileView.xaml.cs">
       <DependentUpon>FileView.xaml</DependentUpon>
     </Compile>
@@ -242,8 +258,6 @@
   <ItemGroup>
     <Folder Include="DataBase\" />
     <Folder Include="ViewModel\Base\" />
-    <Folder Include="ViewModel\Data\" />
-    <Folder Include="ViewModel\Page\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AddOns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
