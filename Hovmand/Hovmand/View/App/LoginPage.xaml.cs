@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -14,6 +15,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Hovmand.Model.App;
+using Hovmand.Model.Database;
+using Hovmand.Model.Domain;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -44,17 +47,22 @@ namespace Hovmand.View.App
 
         private async void CheckPW()
         {
-            var dialog = new MessageDialog("");
-            
-            PasswordHash pwHash = new PasswordHash();
-            List<string> savedHashes = new List<string>(){ "09159038ffe1867b6188d79bfcd2335c19fc5364", "5bebf00777c11fe9fa1938c660a21bc6f0d3a64c", "40bd001563085fc35165329ea1ff5c5ecbdbbeef" };
-
-            if (PasswordTextBox.Text != String.Empty && pwHash.MatchString(PasswordTextBox.Text, savedHashes))
-                dialog.Title = "Correct password";
-            else
-                dialog.Title = "Wrong password";
-
-            await dialog.ShowAsync();
+            HovmanddbContext dbContext = new HovmanddbContext();
+            var n = new User
+            {
+                Email = "heq2j2@gmail.com",
+                Firstname = "Per",
+                Lastname = "Anton",
+                Password = "22",
+                Title = "Manager",
+            };
+            await dbContext.Users.AddAsync(n);
+            Debug.WriteLine($"Added {n}");
+            await dbContext.SaveChangesAsync();
+            foreach (var VARIABLE in dbContext.Users)
+            {
+                Debug.WriteLine(VARIABLE.Firstname);
+            }
         }
     }
 }

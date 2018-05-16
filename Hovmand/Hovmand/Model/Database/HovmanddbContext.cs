@@ -1,4 +1,5 @@
-﻿using Hovmand.Model.Domain;
+﻿using System.Diagnostics;
+using Hovmand.Model.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
 
@@ -12,9 +13,9 @@ namespace Hovmand.Model.Database
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Offer> Offers { get; set; }
         public virtual DbSet<Pipeline> Pipelines { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; }    
         public virtual DbSet<User> Users { get; set; }
-        private string _dbContextOptionsBuilderSettings = File.ReadAllText(@"..\..\..\DBContextOptionsBuilderString.txt");
+        private string _dbContextOptionsBuilderSettings = File.ReadAllText(@".\DBContextOptionsBuilderString.txt");
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
