@@ -1,8 +1,9 @@
 ﻿using System;
+using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
 {
-    public partial class Offer
+    public partial class Offer : DomainAppBase
     {
         public int OfferId { get; set; }
         public string Information { get; set; }
@@ -13,5 +14,9 @@ namespace Hovmand.Model.Domain
 
         public Lead FkLead { get; set; }
         public Product FkProduct { get; set; }
+        public override void SetDefaultValues()
+        {
+            OfferId = NullKey;
+        }
     }
 }
