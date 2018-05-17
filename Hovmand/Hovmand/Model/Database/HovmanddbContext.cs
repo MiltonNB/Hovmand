@@ -227,7 +227,10 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.Property(e => e.UserId).HasColumnName("user_id");
+                entity.HasKey(o => o.UserId);
+                entity.Property(e => e.UserId)
+                .ValueGeneratedOnAdd()
+                .HasColumnName("user_id");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -246,13 +249,14 @@ namespace Hovmand.Model.Database
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasColumnName("password")
+                    .HasColumnName("password")  
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasColumnName("title")
                     .HasMaxLength(10);
+
             });
         }
     }
