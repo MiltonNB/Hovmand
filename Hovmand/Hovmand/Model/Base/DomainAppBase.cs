@@ -1,14 +1,17 @@
-﻿using Data.Transformed.Implementation;
+﻿using Data.InMemory.Interfaces;
+using Data.Transformed.Implementation;
 
 namespace Hovmand.Model.Base
 {
     public abstract class DomainAppBase : CopyableWithDefaultValuesBase
     {
-        public int Id
-        {
-            get { return Key; }
-            set { Key = value; }
-        }
+        //public int Id
+        //{
+        //    get { return Key; }
+        //    set { Key = value; }
+        //}
+
+
 
         protected DomainAppBase() : base()
         {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Data.InMemory.Interfaces;
 using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
@@ -21,5 +22,6 @@ namespace Hovmand.Model.Domain
         {
             ContactId = NullKey;
         }
+
     }
 }
