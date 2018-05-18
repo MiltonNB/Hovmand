@@ -5,7 +5,13 @@
     xmlns:local="using:Hovmand.View.App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:commands="using:Hovmand.ViewModel.Commands"
+    xmlns:viewmodel="using:Hovmand.ViewModel.Data"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <commands:AuthenticateUserCommand/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -25,7 +31,8 @@
                        TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
             <TextBox x:Name="PasswordTextBox" Margin="4" Width="250"/>
             <Button x:Name="SignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
-                    Click="SignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
+                    Click="SignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20" Command="{Binding AuthenticateUser}">
+            </Button>
             <TextBlock x:Name="ForgotPasswordButtonTextBlock" Text="Forgot password?"
                        PointerPressed="ForgotPasswordButton_Click"
                        Foreground="DodgerBlue"
@@ -33,3 +40,4 @@
         </StackPanel>
     </Grid>
 </Page>
+

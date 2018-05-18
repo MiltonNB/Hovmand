@@ -121,10 +121,12 @@
     <Compile Include="ViewModel\App\DBHandler.cs" />
     <Compile Include="ViewModel\App\EmailHandler.cs" />
     <Compile Include="ViewModel\App\LockHandler.cs" />
+    <Compile Include="ViewModel\Commands\AuthenticateUserCommand.cs" />
     <Compile Include="ViewModel\Data\ContactDataViewModel.cs" />
     <Compile Include="ViewModel\Data\CustomerDataViewModel.cs" />
     <Compile Include="ViewModel\Data\LeadDataViewModel.cs" />
     <Compile Include="ViewModel\Data\LocationDataViewModel.cs" />
+    <Compile Include="ViewModel\Data\LoginDataViewModel.cs" />
     <Compile Include="ViewModel\Data\OfferDataViewModel.cs" />
     <Compile Include="ViewModel\Data\PipelineDataViewModel.cs" />
     <Compile Include="ViewModel\Data\ProductDataViewModel.cs" />
@@ -133,6 +135,7 @@
     <Compile Include="ViewModel\Page\CustomerPageViewModel.cs" />
     <Compile Include="ViewModel\Page\LeadPageViewModel.cs" />
     <Compile Include="ViewModel\Page\LocationPageViewModel.cs" />
+    <Compile Include="ViewModel\Page\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\Page\OfferPageViewModel.cs" />
     <Compile Include="ViewModel\Page\PipelinePageViewModel.cs" />
     <Compile Include="ViewModel\Page\ProductPageViewModel.cs" />
