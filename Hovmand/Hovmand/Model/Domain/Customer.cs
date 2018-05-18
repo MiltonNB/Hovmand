@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
 {
-    public partial class Customer : DomainAppBase
+    public partial class Customer
     {
         public Customer()
         {
@@ -22,9 +21,6 @@ namespace Hovmand.Model.Domain
         public Contact FkContact { get; set; }
         public Location FkLocation { get; set; }
         public ICollection<Lead> Leads { get; set; }
-        public override void SetDefaultValues()
-        {
-            CustomerId = NullKey;
-        }
+        
     }
 }

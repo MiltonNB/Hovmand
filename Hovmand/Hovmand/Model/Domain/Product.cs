@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
 {
-    public partial class Product : DomainAppBase
+    public partial class Product
     {
         public Product()
         {
@@ -17,9 +16,6 @@ namespace Hovmand.Model.Domain
         public int InStock { get; set; }
 
         public ICollection<Offer> Offers { get; set; }
-        public override void SetDefaultValues()
-        {
-            ProductId = NullKey;
-        }
+        
     }
 }
