@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hovmand.Model.Domain
 {
@@ -10,6 +11,7 @@ namespace Hovmand.Model.Domain
             Leads = new HashSet<Lead>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PipelineId { get; set; }
         public string Status { get; set; }
         public string Information { get; set; }

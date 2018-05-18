@@ -30,7 +30,10 @@ namespace Hovmand.Model.Database
         {
             modelBuilder.Entity<Contact>(entity =>
             {
-                entity.Property(e => e.ContactId).HasColumnName("contact_id");
+                entity.HasKey(o => o.ContactId);
+                entity.Property(e => e.ContactId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("contact_id");
 
                 entity.Property(e => e.Firstname)
                     .IsRequired()
@@ -51,7 +54,10 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+                entity.HasKey(o => o.CustomerId);
+                entity.Property(e => e.CustomerId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("customer_id");
 
                 entity.Property(e => e.Address)
                     .IsRequired()
@@ -91,7 +97,10 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Lead>(entity =>
             {
-                entity.Property(e => e.LeadId).HasColumnName("lead_id");
+                entity.HasKey(o => o.LeadId);
+                entity.Property(e => e.LeadId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("lead_id");
 
                 entity.Property(e => e.DateAdded)
                     .HasColumnName("date_added")
@@ -134,7 +143,10 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Location>(entity =>
             {
-                entity.Property(e => e.LocationId).HasColumnName("location_id");
+                entity.HasKey(o => o.LocationId);
+                entity.Property(e => e.LocationId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("location_id");
 
                 entity.Property(e => e.Areacode).HasColumnName("areacode");
 
@@ -151,7 +163,10 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Offer>(entity =>
             {
-                entity.Property(e => e.OfferId).HasColumnName("offer_id");
+                entity.HasKey(o => o.OfferId);
+                entity.Property(e => e.OfferId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("offer_id");
 
                 entity.Property(e => e.Date)
                     .HasColumnName("date")
@@ -183,9 +198,10 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Pipeline>(entity =>
             {
+                entity.HasKey(o => o.PipelineId);
                 entity.Property(e => e.PipelineId)
-                    .HasColumnName("pipeline_id")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("pipeline_id");
 
                 entity.Property(e => e.Date)
                     .HasColumnName("date")
@@ -208,7 +224,10 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.Property(e => e.ProductId).HasColumnName("product_id");
+                entity.HasKey(o => o.ProductId);
+                entity.Property(e => e.ProductId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("product_id");
 
                 entity.Property(e => e.InStock).HasColumnName("in_stock");
 

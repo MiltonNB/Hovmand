@@ -52,38 +52,6 @@ namespace Hovmand.Model.Catalog.DomainCatalogs
 
         public static DomainModel Catalogs { get { return Instance; } }
 
-        public async Task LoadAsync()
-        {
-            LoadBegins?.Invoke();
-
-            await _contactCatalog.LoadAsync();
-            await _customerCatalog.LoadAsync();
-            await _leadCatalog.LoadAsync();
-            await _locationCatalog.LoadAsync();
-            await _offerCatalog.LoadAsync();
-            await _pipelineCatalog.LoadAsync();
-            await _productCatalog.LoadAsync();
-            await _userCatalog.LoadAsync();
-
-            LoadEnds?.Invoke();
-        }
-
-        public async Task SaveAsync()
-        {
-            SaveBegins?.Invoke();
-
-            await _contactCatalog.SaveAsync();
-            await _customerCatalog.SaveAsync();
-            await _leadCatalog.SaveAsync();
-            await _locationCatalog.SaveAsync();
-            await _offerCatalog.SaveAsync();
-            await _pipelineCatalog.SaveAsync();
-            await _productCatalog.SaveAsync();
-            await _userCatalog.SaveAsync();
-
-            SaveEnds?.Invoke();
-        }
-
 
 
     }

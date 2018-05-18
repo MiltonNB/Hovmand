@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hovmand.Model.Domain
 {
@@ -9,6 +10,7 @@ namespace Hovmand.Model.Domain
             Offers = new HashSet<Offer>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; }
         public string Title { get; set; }
         public string Information { get; set; }

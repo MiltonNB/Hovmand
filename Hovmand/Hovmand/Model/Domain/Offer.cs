@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hovmand.Model.Domain
 {
     public partial class Offer
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OfferId { get; set; }
         public string Information { get; set; }
         public double Price { get; set; }

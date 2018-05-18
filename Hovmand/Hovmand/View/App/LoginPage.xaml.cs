@@ -62,7 +62,7 @@ namespace Hovmand.View.App
             foreach (var VARIABLE in dbContext.Users)
             {
                 Debug.WriteLine(VARIABLE.Firstname);
-                Debug.Write($"{VARIABLE.UserId} + {VARIABLE.Key}");
+                Debug.Write($"{VARIABLE.UserId}");
             }
         }
     }
