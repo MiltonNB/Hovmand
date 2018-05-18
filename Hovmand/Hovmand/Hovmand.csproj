@@ -113,7 +113,6 @@
     <Compile Include="Model\Catalog\DomainCatalogs\ProductCatalog.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\UserCatalog.cs" />
     <Compile Include="Model\StatusEnum.cs" />
-    <Compile Include="Model\Base\DomainAppBase.cs" />
     <Compile Include="Model\Domain\Offer.cs" />
     <Compile Include="Model\Domain\Pipeline.cs" />
     <Compile Include="Model\Domain\Product.cs" />
@@ -257,6 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataBase\" />
+    <Folder Include="Model\Base\" />
     <Folder Include="ViewModel\Base\" />
   </ItemGroup>
   <ItemGroup>

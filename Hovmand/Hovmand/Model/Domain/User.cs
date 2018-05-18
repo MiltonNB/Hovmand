@@ -1,13 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Data.InMemory.Interfaces;
-using Hovmand.Model.Base;
-using Hovmand.Model.Database;
 
 namespace Hovmand.Model.Domain
 {
-    public partial class User : DomainAppBase, IStorable
+    public partial class User
     {
         public User()
         {
@@ -22,15 +18,9 @@ namespace Hovmand.Model.Domain
         public string Title { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-
-        public override void SetDefaultValues()
-        {
-            //UserId = NullKey;
-        }
-
-        [NotMapped]
+        
         public ICollection<Lead> Leads { get; set; }
-        [NotMapped]
-        public new int Key => UserId;
+       
+        
     }
 }

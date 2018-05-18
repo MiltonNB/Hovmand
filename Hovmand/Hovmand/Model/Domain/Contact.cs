@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-using Data.InMemory.Interfaces;
-using Hovmand.Model.Base;
 
 namespace Hovmand.Model.Domain
 {
-    public partial class Contact : DomainAppBase
+    public partial class Contact
     {
         public Contact()
         {
@@ -18,10 +16,7 @@ namespace Hovmand.Model.Domain
         public int Phone { get; set; }
 
         public ICollection<Customer> Customers { get; set; }
-        public override void SetDefaultValues()
-        {
-            ContactId = NullKey;
-        }
+        
 
     }
 }
