@@ -117,9 +117,11 @@
     <Compile Include="Model\Domain\Pipeline.cs" />
     <Compile Include="Model\Domain\Product.cs" />
     <Compile Include="Model\Domain\User.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\App\DBHandler.cs" />
     <Compile Include="ViewModel\App\EmailHandler.cs" />
     <Compile Include="ViewModel\App\LockHandler.cs" />
+    <Compile Include="ViewModel\Base\DataViewModelBase.cs" />
     <Compile Include="ViewModel\Commands\AuthenticateUserCommand.cs" />
     <Compile Include="ViewModel\Data\ContactDataViewModel.cs" />
     <Compile Include="ViewModel\Data\CustomerDataViewModel.cs" />
@@ -260,7 +262,6 @@
   <ItemGroup>
     <Folder Include="DataBase\" />
     <Folder Include="Model\Base\" />
-    <Folder Include="ViewModel\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AddOns, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
