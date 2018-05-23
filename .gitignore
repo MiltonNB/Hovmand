@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /Hovmand/Hovmand/DBContextOptionsBuilderString.txt
+/Hovmand/Hovmand/Assets/vars.txt

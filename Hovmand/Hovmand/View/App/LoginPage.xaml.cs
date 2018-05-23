@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Hovmand.Model.Catalog.Base;
+using Hovmand.Model.Catalog.DomainCatalogs;
 using Hovmand.Model.Database;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -63,17 +67,19 @@ namespace Hovmand.View.App
             Offer offer = new Offer()
             {
                 Date = DateTime.Now,
-                Information = "",
+                Information = "w2123",
                 Price = 2.0,
                 ProductAmount = 1,
                 FkLeadId = 1,
                 FkProductId = 1,
             };
 
-            context.Products.Add(product);
-            context.Users.Add(user);
-            context.Leads.Add(lead);
-            context.Offers.Add(offer);
+            //context.Products.Add(product);
+            //context.Users.Add(user);
+            //context.Leads.Add(lead);
+            //context.Offers.Add(offer);
+            CatalogBase<Type> cb = new CatalogBase<Type>();
+            cb.Create(offer);
 
 
 
