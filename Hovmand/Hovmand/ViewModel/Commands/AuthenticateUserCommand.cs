@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using Hovmand.View.App;
 
 namespace Hovmand.ViewModel.Commands
 {
@@ -19,7 +18,7 @@ namespace Hovmand.ViewModel.Commands
         public void Execute(object parameter)
         {
             
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public event EventHandler CanExecuteChanged;

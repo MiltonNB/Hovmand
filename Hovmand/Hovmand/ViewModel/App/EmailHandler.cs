@@ -1,6 +1,4 @@
-﻿using Hovmand.Model.Domain;
-
-namespace Hovmand.ViewModel.App
+﻿namespace Hovmand.ViewModel.App
 {
     public class EmailHandler
     {

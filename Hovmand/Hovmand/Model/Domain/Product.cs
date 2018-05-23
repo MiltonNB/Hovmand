@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Product
     {
@@ -16,6 +16,5 @@ namespace Hovmand.Model.Domain
         public int InStock { get; set; }
 
         public ICollection<Offer> Offers { get; set; }
-        
     }
 }

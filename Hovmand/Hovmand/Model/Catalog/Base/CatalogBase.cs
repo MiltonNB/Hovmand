@@ -1,32 +1,25 @@
-﻿using Data.InMemory.Interfaces;
-using Extensions.Model.Implementation;
-using Hovmand.Model.Database;
-using Hovmand.Model.Domain;
-using Model.Implementation;
-
-namespace Hovmand.Model.Catalog.Base
+﻿namespace Hovmand.Model.Catalog.Base
 {
-    public class CatalogBase<T> : EFCorePersistableCatalogAsync<HovmanddbContext, T, T, T> 
-        where T : class, IStorable, ICopyable, new()
+    public class CatalogBase<T>
     {
-        public override T CreateDomainObjectFromViewDataObject(T obj)
+        public void Create(T obj)
         {
-            return obj;
+            //todo
         }
 
-        public override T CreateViewDataObject(T obj)
+        public T Read(int key)
         {
-            return obj;
+            return default(T);
         }
 
-        public override T CreatePersistentDataObject(T obj)
+        public void Update(T obj, int key)
         {
-            return obj;
+            //todo
         }
 
-        public override T CreateDomainObjectFromPersistentDataObject(T obj)
+        public void Delete(int key)
         {
-            return obj;
+            //todo
         }
     }
 }

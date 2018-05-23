@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Location
     {
@@ -15,6 +15,5 @@ namespace Hovmand.Model.Domain
         public int Areacode { get; set; }
 
         public ICollection<Customer> Customers { get; set; }
-        
     }
 }

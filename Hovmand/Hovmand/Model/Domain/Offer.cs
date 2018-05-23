@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Offer
     {
@@ -8,11 +8,11 @@ namespace Hovmand.Model.Domain
         public string Information { get; set; }
         public double Price { get; set; }
         public DateTime Date { get; set; }
+        public int ProductAmount { get; set; }
         public int FkProductId { get; set; }
         public int FkLeadId { get; set; }
 
         public Lead FkLead { get; set; }
         public Product FkProduct { get; set; }
-        
     }
 }

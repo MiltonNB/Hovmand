@@ -1,22 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Hovmand.Model.App;
 using Hovmand.Model.Database;
-using Hovmand.Model.Domain;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -41,29 +28,57 @@ namespace Hovmand.View.App
         private void ForgotPasswordButton_Click(object sender, PointerRoutedEventArgs e)
         {
             ErrorMessage.Text = "";
-        }
+        }   
 
         //TODO-Midlertidigt showcase. 
 
         private async void CheckPW()
         {
-            HovmanddbContext dbContext = new HovmanddbContext();
-            var n = new User
+            HovmanddbContext context = new Model.Database.HovmanddbContext();
+            
+            Product product = new Product()
             {
-                Email = "heq2j2@gmail.com",
-                Firstname = "Per",
-                Lastname = "Anton",
-                Password = "22",
-                Title = "Manager",
+                Information = "",
+                InStock = 1,
+                Price = 2.0,
+                Title = "",
             };
-            await dbContext.Users.AddAsync(n);
-            Debug.WriteLine($"Added {n}");
-            await dbContext.SaveChangesAsync();
-            foreach (var VARIABLE in dbContext.Users)
+
+            User user = new User()
             {
-                Debug.WriteLine(VARIABLE.Firstname);
-                Debug.Write($"{VARIABLE.UserId} + {VARIABLE.Key}");
-            }
+                Email = "",
+                Firstname = "",
+                Lastname = "",
+                Password = "",
+                Title = "",
+            };
+
+            Lead lead = new Lead()
+            {
+                DateAdded = DateTime.Now,
+                Information = "",
+                Status = ""
+            };
+
+            Offer offer = new Offer()
+            {
+                Date = DateTime.Now,
+                Information = "",
+                Price = 2.0,
+                ProductAmount = 1,
+                FkLeadId = 1,
+                FkProductId = 1,
+            };
+
+            context.Products.Add(product);
+            context.Users.Add(user);
+            context.Leads.Add(lead);
+            context.Offers.Add(offer);
+
+
+
+            await context.SaveChangesAsync();
+            Debug.WriteLine("Saved successfully.");
         }
     }
 }

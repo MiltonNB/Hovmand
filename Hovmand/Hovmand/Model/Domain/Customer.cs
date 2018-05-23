@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Customer
     {
@@ -21,6 +21,5 @@ namespace Hovmand.Model.Domain
         public Contact FkContact { get; set; }
         public Location FkLocation { get; set; }
         public ICollection<Lead> Leads { get; set; }
-        
     }
 }
