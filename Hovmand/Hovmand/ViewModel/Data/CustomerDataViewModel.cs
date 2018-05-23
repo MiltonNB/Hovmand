@@ -1,5 +1,4 @@
-﻿using Hovmand.Model.Domain;
-using Hovmand.ViewModel.Base;
+﻿using Hovmand.ViewModel.Base;
 
 namespace Hovmand.ViewModel.Data
 {
@@ -16,7 +15,5 @@ namespace Hovmand.ViewModel.Data
         {
             get { return _domainObject; }
         }
-
-        public CustomerId
     }
 }
