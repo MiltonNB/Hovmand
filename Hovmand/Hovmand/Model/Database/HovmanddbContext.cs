@@ -13,7 +13,7 @@ namespace Hovmand.Model.Database
         public virtual DbSet<Pipeline> Pipelines { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        private string _dbContextOptionsBuilderSettings = File.ReadAllText(@".\DBContextOptionsBuilderString.txt");
+        private string _dbContextOptionsBuilderSettings = File.ReadAllText(@".\vars.txt");
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
