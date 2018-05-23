@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Location
     {
@@ -10,13 +9,11 @@ namespace Hovmand.Model.Domain
             Customers = new HashSet<Customer>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int LocationId { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
         public int Areacode { get; set; }
 
         public ICollection<Customer> Customers { get; set; }
-        
     }
 }

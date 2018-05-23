@@ -1,6 +1,4 @@
-﻿using System.Windows.Input;
-using Hovmand.ViewModel.Commands;
-using Hovmand.ViewModel.Data;
+﻿using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Page
 {

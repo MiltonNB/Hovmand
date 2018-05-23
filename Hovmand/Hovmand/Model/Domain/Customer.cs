@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Customer
     {
@@ -10,7 +9,6 @@ namespace Hovmand.Model.Domain
             Leads = new HashSet<Lead>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerId { get; set; }
         public int Cvr { get; set; }
         public string CompanyName { get; set; }
@@ -23,6 +21,5 @@ namespace Hovmand.Model.Domain
         public Contact FkContact { get; set; }
         public Location FkLocation { get; set; }
         public ICollection<Lead> Leads { get; set; }
-        
     }
 }

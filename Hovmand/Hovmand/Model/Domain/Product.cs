@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Product
     {
@@ -10,7 +9,6 @@ namespace Hovmand.Model.Domain
             Offers = new HashSet<Offer>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; }
         public string Title { get; set; }
         public string Information { get; set; }
@@ -18,6 +16,5 @@ namespace Hovmand.Model.Domain
         public int InStock { get; set; }
 
         public ICollection<Offer> Offers { get; set; }
-        
     }
 }

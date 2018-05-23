@@ -1,6 +1,4 @@
-﻿using Windows.ApplicationModel.Store.Preview.InstallControl;
-using Hovmand.Model.Domain;
-using ViewModel.Data.Implementation;
+﻿using ViewModel.Data.Implementation;
 
 namespace Hovmand.ViewModel.Data
 {
@@ -51,7 +49,7 @@ namespace Hovmand.ViewModel.Data
             }
         }
 
-        public int Phone
+        public int? Phone
         {
             get { return DataObject.Phone; }
             set

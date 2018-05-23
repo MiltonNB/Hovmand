@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using Hovmand.Model.Domain;
+﻿using System.IO;
 using Microsoft.EntityFrameworkCore;
-using System.IO;
 
 namespace Hovmand.Model.Database
 {
@@ -13,7 +11,7 @@ namespace Hovmand.Model.Database
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Offer> Offers { get; set; }
         public virtual DbSet<Pipeline> Pipelines { get; set; }
-        public virtual DbSet<Product> Products { get; set; }    
+        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
         private string _dbContextOptionsBuilderSettings = File.ReadAllText(@".\DBContextOptionsBuilderString.txt");
 
@@ -30,10 +28,7 @@ namespace Hovmand.Model.Database
         {
             modelBuilder.Entity<Contact>(entity =>
             {
-                entity.HasKey(o => o.ContactId);
-                entity.Property(e => e.ContactId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("contact_id");
+                entity.Property(e => e.ContactId).HasColumnName("contact_id");
 
                 entity.Property(e => e.Firstname)
                     .IsRequired()
@@ -54,10 +49,7 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Customer>(entity =>
             {
-                entity.HasKey(o => o.CustomerId);
-                entity.Property(e => e.CustomerId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("customer_id");
+                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
 
                 entity.Property(e => e.Address)
                     .IsRequired()
@@ -97,10 +89,7 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Lead>(entity =>
             {
-                entity.HasKey(o => o.LeadId);
-                entity.Property(e => e.LeadId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("lead_id");
+                entity.Property(e => e.LeadId).HasColumnName("lead_id");
 
                 entity.Property(e => e.DateAdded)
                     .HasColumnName("date_added")
@@ -125,28 +114,22 @@ namespace Hovmand.Model.Database
                 entity.HasOne(d => d.FkCustomers)
                     .WithMany(p => p.Leads)
                     .HasForeignKey(d => d.FkCustomersId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Leads_Customers");
 
                 entity.HasOne(d => d.FkPipeline)
                     .WithMany(p => p.Leads)
                     .HasForeignKey(d => d.FkPipelineId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Leads_Pipelines");
 
                 entity.HasOne(d => d.FkUser)
                     .WithMany(p => p.Leads)
                     .HasForeignKey(d => d.FkUserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Leads_Users");
             });
 
             modelBuilder.Entity<Location>(entity =>
             {
-                entity.HasKey(o => o.LocationId);
-                entity.Property(e => e.LocationId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("location_id");
+                entity.Property(e => e.LocationId).HasColumnName("location_id");
 
                 entity.Property(e => e.Areacode).HasColumnName("areacode");
 
@@ -163,10 +146,7 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Offer>(entity =>
             {
-                entity.HasKey(o => o.OfferId);
-                entity.Property(e => e.OfferId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("offer_id");
+                entity.Property(e => e.OfferId).HasColumnName("offer_id");
 
                 entity.Property(e => e.Date)
                     .HasColumnName("date")
@@ -183,6 +163,8 @@ namespace Hovmand.Model.Database
 
                 entity.Property(e => e.Price).HasColumnName("price");
 
+                entity.Property(e => e.ProductAmount).HasColumnName("product_amount");
+
                 entity.HasOne(d => d.FkLead)
                     .WithMany(p => p.Offers)
                     .HasForeignKey(d => d.FkLeadId)
@@ -198,10 +180,9 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Pipeline>(entity =>
             {
-                entity.HasKey(o => o.PipelineId);
                 entity.Property(e => e.PipelineId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("pipeline_id");
+                    .HasColumnName("pipeline_id")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.Date)
                     .HasColumnName("date")
@@ -224,10 +205,7 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.HasKey(o => o.ProductId);
-                entity.Property(e => e.ProductId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("product_id");
+                entity.Property(e => e.ProductId).HasColumnName("product_id");
 
                 entity.Property(e => e.InStock).HasColumnName("in_stock");
 
@@ -246,10 +224,7 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(o => o.UserId);
-                entity.Property(e => e.UserId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("user_id");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -268,14 +243,13 @@ namespace Hovmand.Model.Database
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasColumnName("password")  
+                    .HasColumnName("password")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasColumnName("title")
                     .HasMaxLength(10);
-
             });
         }
     }
