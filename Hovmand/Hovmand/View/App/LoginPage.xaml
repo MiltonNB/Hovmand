@@ -9,9 +9,9 @@
     xmlns:viewmodel="using:Hovmand.ViewModel.Data"
     mc:Ignorable="d">
 
-    <Page.DataContext>
+    <!--<Page.DataContext>
         <commands:AuthenticateUserCommand/>
-    </Page.DataContext>
+    </Page.DataContext>-->
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -31,8 +31,7 @@
                        TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
             <TextBox x:Name="PasswordTextBox" Margin="4" Width="250"/>
             <Button x:Name="SignInButton" Content="Login" Background="DodgerBlue" Foreground="White"
-                    Click="SignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20" Command="{Binding AuthenticateUser}">
-            </Button>
+                    Click="SignInButton_Click" Width="80" HorizontalAlignment="Center" Margin="0,20"/>
             <TextBlock x:Name="ForgotPasswordButtonTextBlock" Text="Forgot password?"
                        PointerPressed="ForgotPasswordButton_Click"
                        Foreground="DodgerBlue"

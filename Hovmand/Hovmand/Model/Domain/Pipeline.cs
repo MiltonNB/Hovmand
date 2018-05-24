@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Hovmand.Model.Domain
+namespace Hovmand
 {
     public partial class Pipeline
     {
@@ -17,6 +17,5 @@ namespace Hovmand.Model.Domain
         public DateTime DateLastEdit { get; set; }
 
         public ICollection<Lead> Leads { get; set; }
-        
     }
 }

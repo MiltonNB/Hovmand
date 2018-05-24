@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Hovmand.Model.Catalog.Base;
-using Hovmand.Model.Database;
-using Hovmand.Model.Domain;
+﻿using Hovmand.Model.Catalog.Base;
 
 namespace Hovmand.Model.Catalog.DomainCatalogs
 {

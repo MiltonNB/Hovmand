@@ -1,62 +1,65 @@
 ﻿using Windows.ApplicationModel.Store.Preview.InstallControl;
-using Hovmand.Model.Domain;
+using Hovmand.ViewModel.Base;
 using ViewModel.Data.Implementation;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class ContactDataViewModel : DataViewModelBase<Contact>
+    public class ContactDataViewModel : DataViewModelBase
     {
-        public ContactDataViewModel(Contact obj) : base (obj)
+        private Contact _domainObject;
+
+        public ContactDataViewModel(Contact domainObject)
         {
-            
+            _domainObject = domainObject;
+        }
+
+        public Contact ContactDomainObject
+        {
+            get { return _domainObject; }
         }
 
         public int ContactId
         {
-            get { return DataObject.ContactId; }
-            set
-            {
-                DataObject.ContactId = value;
-                OnPropertyChanged();
-            }
+            get { return _domainObject.ContactId; }
+
         }
 
         public string FirstName
         {
-            get { return DataObject.Firstname; }
+            get { return _domainObject.Firstname; }
             set
             {
-                DataObject.Firstname = value;
+                _domainObject.Firstname = value;
                 OnPropertyChanged();
             }
         }
 
         public string LastName
         {
-            get { return DataObject.Lastname; }
+            get { return _domainObject.Lastname; }
             set
             {
-                DataObject.Lastname = value;
+                _domainObject.Lastname = value;
                 OnPropertyChanged();
             }
         }
 
         public string Mail
         {
-            get { return DataObject.Mail; }
+            get { return _domainObject.Mail; }
             set
             {
-                DataObject.Mail = value;
+                _domainObject.Mail = value;
                 OnPropertyChanged();
             }
         }
 
-        public int Phone
+        public int? Phone
         {
-            get { return DataObject.Phone; }
+            get { return _domainObject.Phone; }
             set
             {
-                DataObject.Phone = value;
+                _domainObject.Phone = value;
                 OnPropertyChanged();
             }
         }

@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using Hovmand.Model.Domain;
+﻿using System.IO;
 using Microsoft.EntityFrameworkCore;
-using System.IO;
 
 namespace Hovmand.Model.Database
 {
@@ -13,9 +11,9 @@ namespace Hovmand.Model.Database
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Offer> Offers { get; set; }
         public virtual DbSet<Pipeline> Pipelines { get; set; }
-        public virtual DbSet<Product> Products { get; set; }    
+        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        private string _dbContextOptionsBuilderSettings = File.ReadAllText(@".\DBContextOptionsBuilderString.txt");
+        private string _dbContextOptionsBuilderSettings = File.ReadAllText(@".\vars.txt");
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -116,19 +114,16 @@ namespace Hovmand.Model.Database
                 entity.HasOne(d => d.FkCustomers)
                     .WithMany(p => p.Leads)
                     .HasForeignKey(d => d.FkCustomersId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Leads_Customers");
 
                 entity.HasOne(d => d.FkPipeline)
                     .WithMany(p => p.Leads)
                     .HasForeignKey(d => d.FkPipelineId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Leads_Pipelines");
 
                 entity.HasOne(d => d.FkUser)
                     .WithMany(p => p.Leads)
                     .HasForeignKey(d => d.FkUserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Leads_Users");
             });
 
@@ -167,6 +162,8 @@ namespace Hovmand.Model.Database
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Price).HasColumnName("price");
+
+                entity.Property(e => e.ProductAmount).HasColumnName("product_amount");
 
                 entity.HasOne(d => d.FkLead)
                     .WithMany(p => p.Offers)
@@ -227,10 +224,7 @@ namespace Hovmand.Model.Database
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(o => o.UserId);
-                entity.Property(e => e.UserId)
-                .ValueGeneratedOnAdd()
-                .HasColumnName("user_id");
+                entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.Property(e => e.Email)
                     .IsRequired()
@@ -249,14 +243,13 @@ namespace Hovmand.Model.Database
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasColumnName("password")  
+                    .HasColumnName("password")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Title)
                     .IsRequired()
                     .HasColumnName("title")
                     .HasMaxLength(10);
-
             });
         }
     }
