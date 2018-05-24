@@ -1,4 +1,4 @@
-﻿using Hovmand.View.App;
+﻿using Hovmand.Views.App;
 using Hovmand.ViewModels.App;
 using Windows.UI.Xaml.Controls;
 

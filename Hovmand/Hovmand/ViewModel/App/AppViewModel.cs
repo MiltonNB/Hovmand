@@ -37,17 +37,17 @@ namespace Hovmand.ViewModels.App
         {
             NavigationCommands.Add("OverView", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.App.OverviewPage));
+                AppFrame.Navigate(typeof(Views.App.OverviewPage));
             }));
 
             NavigationCommands.Add("LeadsView", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.App.LeadPage));
+                AppFrame.Navigate(typeof(Views.App.LeadPage));
             }));
 
             NavigationCommands.Add("CustomersView", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.App.CustomerPage));
+                AppFrame.Navigate(typeof(Views.App.CustomerPage));
             }));
         }
     }
