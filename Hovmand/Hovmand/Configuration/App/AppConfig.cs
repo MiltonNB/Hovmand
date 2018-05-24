@@ -1,8 +1,15 @@
-﻿namespace Hovmand.Configuration.App
+﻿using Hovmand.View.App;
+using Hovmand.ViewModels.App;
+using Windows.UI.Xaml.Controls;
+
+namespace Hovmand.Configuration.App
 {
-    //public static void Setup(Page mainPage, Frame appFrame)
-    //{
-    //    appFrame.Navigate(typeof(FileView));
-    //    ((AppViewModel)mainPage.DataContext).SetAppFrame(appFrame);
-    //}
+    public class AppConfig
+    {
+        public static void Setup(Page mainPage, Frame appFrame)
+        {
+            appFrame.Navigate(typeof(OverviewPage));
+            ((AppViewModel)mainPage.DataContext).SetAppFrame(appFrame);
+        }
+    }
 }

@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <!--<vm:AppViewModel/>-->
+        <vm:AppViewModel/>
     </Page.DataContext>
 
     <Page.Resources>
@@ -31,8 +31,7 @@
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Globe" Content="OverView" Tag="OverView"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Memo" Content="Leads" Tag="LeadsView"/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Customers" Tag="CustomerView"/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="OtherUser" Content="Employees" Tag="EmployeeView"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Customers" Tag="CustomersView"/>
             </NavigationView.MenuItems>
 
             <Frame x:Name="AppFrame">
