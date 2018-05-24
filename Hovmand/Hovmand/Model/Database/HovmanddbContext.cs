@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hovmand.Model.Database
@@ -15,6 +16,22 @@ namespace Hovmand.Model.Database
         public virtual DbSet<User> Users { get; set; }
         private string _dbContextOptionsBuilderSettings = File.ReadAllText(@".\vars.txt");
 
+
+        //Singleton
+        private static HovmanddbContext _instance;
+
+        private HovmanddbContext() { }
+
+        public static HovmanddbContext Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new HovmanddbContext();
+
+                return _instance;
+            }
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

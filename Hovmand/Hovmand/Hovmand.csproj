@@ -145,6 +145,16 @@
     <Compile Include="View\App\FileView.xaml.cs">
       <DependentUpon>FileView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\App\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\App\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Domain\ClosedLeads.xaml.cs">
+      <DependentUpon>ClosedLeads.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Domain\CustomerPage.xaml.cs">
       <DependentUpon>CustomerPage.xaml</DependentUpon>
     </Compile>
@@ -154,18 +164,14 @@
     <Compile Include="View\Domain\LeadPage.xaml.cs">
       <DependentUpon>LeadPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\App\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\App\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Domain\OfferoverviewPage.xaml.cs">
       <DependentUpon>OfferoverviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Domain\OverviewPage.xaml.cs">
       <DependentUpon>OverviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\PendingLeads.xaml.cs">
+      <DependentUpon>PendingLeads.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Domain\PipelineStatusPage.xaml.cs">
       <DependentUpon>PipelineStatusPage.xaml</DependentUpon>
@@ -210,18 +216,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Domain\CustomerPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Domain\EditOfferPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Domain\LeadPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\App\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,17 +224,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Domain\OfferoverviewPage.xaml">
+    <Page Include="View\Domain\ClosedLeads.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Domain\CustomerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\EditOfferPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\LeadPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\OfferoverviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Domain\OverviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\PendingLeads.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Domain\PipelineStatusPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

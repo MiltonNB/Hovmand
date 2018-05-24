@@ -40,12 +40,22 @@ namespace Hovmand.ViewModels.App
                 AppFrame.Navigate(typeof(Views.App.OverviewPage));
             }));
 
-            NavigationCommands.Add("LeadsView", new RelayCommand(() =>
+            NavigationCommands.Add("ActiveLeads", new RelayCommand(() =>
             {
                 AppFrame.Navigate(typeof(Views.App.LeadPage));
             }));
 
-            NavigationCommands.Add("CustomersView", new RelayCommand(() =>
+            NavigationCommands.Add("PendingLeads", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.Domain.PendingLeads));
+            }));
+
+            NavigationCommands.Add("ClosedLeads", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.Domain.ClosedLeads));
+            }));
+
+            NavigationCommands.Add("Customers", new RelayCommand(() =>
             {
                 AppFrame.Navigate(typeof(Views.App.CustomerPage));
             }));

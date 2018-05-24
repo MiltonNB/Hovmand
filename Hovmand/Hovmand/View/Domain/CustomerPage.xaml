@@ -8,60 +8,43 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ScrollViewer>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <TextBlock Grid.Column="0" Style="{StaticResource TitleTextBlockStyle}"
-                           Height="50"
-                           FontSize="28"
-                           VerticalAlignment="Center"
-                           Text="Customers"
-                           Margin="0" SelectionChanged="TextBlock_SelectionChanged"/>
-                </Grid>
-                <Grid Grid.Row="1" Width="auto">
-                    
-                    <ScrollViewer>
-                        <StackPanel>
-                            <ListView  ItemsSource="" SelectedItem="" >
-                                <ListView.HeaderTemplate>
-                                    <DataTemplate>
-                                    </DataTemplate>
-                                </ListView.HeaderTemplate>
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid Margin="0.0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="1*"/>
-                                                <ColumnDefinition Width="1*"/>
-                                                <ColumnDefinition Width="1*"/>
-                                                <ColumnDefinition Width="1*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="0" Text="Name" Style="{ThemeResource CaptionTextBlockStyle}" FontSize="32"/>
-                                            <TextBlock Grid.Column="1" Text="Company" Style="{ThemeResource CaptionTextBlockStyle}" FontSize="32"/>
-                                            <TextBlock Grid.Column="2" Text="Mail" Style="{ThemeResource CaptionTextBlockStyle}" FontSize="32"/>
-                                            <TextBlock Grid.Column="3" Text="Phone" Style="{ThemeResource CaptionTextBlockStyle}" FontSize="32"/>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </StackPanel>
-                    </ScrollViewer>
-                </Grid>
-            </Grid>
-        </ScrollViewer>
+        <ListView>
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Padding="0,12,0,12" Background="{ThemeResource SystemBaseLowColor}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Padding="20,0,0,0" Text="Name"  Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="1" Text="Phone" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="2" Text="Mail" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="3" Text="Company" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="4" Text="Adress" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="48">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="1" />
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="2"/>
+                        <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="3"/>
+                        <TextBlock Grid.Column="3" VerticalAlignment="Center" Text="4"/>
+                        <TextBlock Grid.Column="4" VerticalAlignment="Center" Text="5"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

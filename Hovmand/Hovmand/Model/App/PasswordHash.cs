@@ -17,17 +17,11 @@ namespace Hovmand.Model.App
             return outputHashed; //Returnerer den endelige string
         }
 
-        public bool MatchString(string input, List<string> toMatchList) //Sammenligner 1 string med en liste, hvor den hasher input
+        public bool MatchString(string inputPwNonHashed, string savedPwHashed) 
         {
-            var inputHashed = HashString(input); //Bruger HashString metoden til at hashe
-
-            foreach (var hash in toMatchList)
-            {
-                if (inputHashed == hash) //Hvis de 2 matcher
-                {
-                    return true;
-                }
-            }
+            var inputHashed = HashString(inputPwNonHashed); //Bruger HashString metoden til at hashe input
+            if (inputPwNonHashed == savedPwHashed) //Sammenligning
+                return true;
 
             return false;
         }
