@@ -78,10 +78,15 @@ namespace Hovmand.View.App
             //context.Users.Add(user);
             //context.Leads.Add(lead);
             //context.Offers.Add(offer);
-            CatalogBase<Type> cb = new CatalogBase<Type>();
+            CatalogBase<Offer> cb = new CatalogBase<Offer>();
 
             cb.Create(offer);
 
+
+            var oc = new CatalogBase<Offer>();
+
+            Offer ofc = (Offer)oc.Read(1);
+            Debug.WriteLine("OFC" + ofc.Information + ofc.Date);
 
 
             await context.SaveChangesAsync();

@@ -1,10 +1,13 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Hovmand.Model.Database;
 using Microsoft.EntityFrameworkCore;
+using Remotion.Linq.Parsing;
 
 namespace Hovmand.Model.Catalog.Base
 {
-    public class CatalogBase<T>
+    public class CatalogBase<T> where T : class
     {
         private HovmanddbContext _dbContext;
 
@@ -13,25 +16,24 @@ namespace Hovmand.Model.Catalog.Base
             _dbContext = HovmanddbContext.Instance;
         }
 
-        public void Create(object obj)
+        public void Create(T obj)
         {
-            _dbContext.Add(obj);
-            _dbContext.SaveChanges();
+            _dbContext.Set<T>().Add(obj);
         }
 
-        public T Read(int key)
+        public object Read(int key)
         {
-            return default(T);
+            return _dbContext.Set<T>().Find(key);
         }
 
-        public void Update(object obj, int key)
+        public void Update(T obj)
         {
-            //todo
+            _dbContext.Set<T>().Update(obj);
         }
 
-        public void Delete(int key)
+        public void Delete(T obj)
         {
-            //todo
+            _dbContext.Set<T>().Remove(obj);
         }
     }
 }
