@@ -31,8 +31,11 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Globe" Content="OverView" Tag="OverView"/>
                 <NavigationViewItemSeparator/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Memo" Content="Leads" Tag="LeadsView"/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Customers" Tag="CustomersView"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="CheckList" Content="ActiveLeads" Tag="ActiveLeads"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Flag" Content="PendingLeads" Tag="PendingLeads"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="DisableUpdates" Content="ClosedLeads" Tag="ClosedLeads"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Customers" Tag="Customers"/>
             </NavigationView.MenuItems>
 
             <Frame x:Name="AppFrame">
