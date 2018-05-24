@@ -38,7 +38,7 @@ namespace Hovmand.Views.App
 
         private async void CheckPW()
         {
-            HovmanddbContext context = new Model.Database.HovmanddbContext();
+            HovmanddbContext context = HovmanddbContext.Instance;
             
             Product product = new Product()
             {
@@ -79,6 +79,7 @@ namespace Hovmand.Views.App
             //context.Leads.Add(lead);
             //context.Offers.Add(offer);
             CatalogBase<Type> cb = new CatalogBase<Type>();
+
             cb.Create(offer);
 
 
