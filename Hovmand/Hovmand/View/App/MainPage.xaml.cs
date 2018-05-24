@@ -1,7 +1,7 @@
 ﻿using Hovmand.Configuration.App;
 using Windows.UI.Xaml.Controls;
 
-namespace Hovmand.Views.App
+namespace Hovmand.View.App
 {
     public sealed partial class MainPage : Page
     {

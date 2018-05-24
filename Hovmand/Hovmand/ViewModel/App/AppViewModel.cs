@@ -3,7 +3,7 @@ using Windows.UI.Xaml.Controls;
 using Commands.Implementation;
 using ViewModel.App.Implementation;
 
-namespace Hovmand.ViewModels.App
+namespace Hovmand.ViewModel.App
 {
     public class AppViewModel : AppViewModelBase
     {
@@ -37,19 +37,19 @@ namespace Hovmand.ViewModels.App
         {
             NavigationCommands.Add("OverView", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(Views.App.OverviewPage));
+                AppFrame.Navigate(typeof(View.App.OverviewPage));
             }));
 
             NavigationCommands.Add("ActiveLeads", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(Views.App.LeadPage));
+                AppFrame.Navigate(typeof(View.App.LeadPage));
             }));
 
             NavigationCommands.Add("PendingLeads", new RelayCommand(() =>
             {
                 AppFrame.Navigate(typeof(View.Domain.PendingLeads));
             }));
-
+        
             NavigationCommands.Add("ClosedLeads", new RelayCommand(() =>
             {
                 AppFrame.Navigate(typeof(View.Domain.ClosedLeads));
@@ -57,7 +57,7 @@ namespace Hovmand.ViewModels.App
 
             NavigationCommands.Add("Customers", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(Views.App.CustomerPage));
+                AppFrame.Navigate(typeof(View.App.CustomerPage));
             }));
         }
     }

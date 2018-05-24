@@ -1,5 +1,5 @@
-﻿using Hovmand.Views.App;
-using Hovmand.ViewModels.App;
+﻿using Hovmand.View.App;
+using Hovmand.ViewModel.App;
 using Windows.UI.Xaml.Controls;
 
 namespace Hovmand.Configuration.App
