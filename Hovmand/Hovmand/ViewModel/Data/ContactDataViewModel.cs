@@ -1,4 +1,5 @@
-﻿using Windows.ApplicationModel.Store.Preview.InstallControl;
+﻿using System.Collections.Generic;
+using Windows.ApplicationModel.Store.Preview.InstallControl;
 using Hovmand.ViewModel.Base;
 using ViewModel.Data.Implementation;
 
@@ -60,6 +61,16 @@ namespace Hovmand.ViewModel.Data
             set
             {
                 _domainObject.Phone = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICollection<Customer> Customers
+        {
+            get { return _domainObject.Customers; }
+            set
+            {
+                _domainObject.Customers = value;
                 OnPropertyChanged();
             }
         }
