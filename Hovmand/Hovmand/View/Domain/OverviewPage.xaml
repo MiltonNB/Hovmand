@@ -23,7 +23,7 @@
                         <TextBlock Grid.Column="1" Text="Phone" Style="{ThemeResource CaptionTextBlockStyle}"/>
                         <TextBlock Grid.Column="2" Text="Mail" Style="{ThemeResource CaptionTextBlockStyle}"/>
                         <TextBlock Grid.Column="3" Text="Company" Style="{ThemeResource CaptionTextBlockStyle}"/>
-                        <TextBlock Grid.Column="4" Text="Lead information" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Grid.Column="4" Text="Information" Style="{ThemeResource CaptionTextBlockStyle}"/>
                         <TextBlock Grid.Column="5" Text="Date" Style="{ThemeResource CaptionTextBlockStyle}"/>
                     </Grid>
                 </DataTemplate>
