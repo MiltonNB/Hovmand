@@ -10,7 +10,7 @@ namespace Hovmand.Model.Catalog.Base
 
         public CatalogBase()
         {
-            _dbContext = new HovmanddbContext();
+            _dbContext = HovmanddbContext.Instance;
         }
 
         public void Create(object obj)
