@@ -152,6 +152,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Domain\ActiveLeads.xaml.cs">
+      <DependentUpon>ActiveLeads.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Domain\ClosedLeads.xaml.cs">
       <DependentUpon>ClosedLeads.xaml</DependentUpon>
     </Compile>
@@ -223,6 +226,10 @@
     <Page Include="View\App\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\ActiveLeads.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Domain\ClosedLeads.xaml">
       <SubType>Designer</SubType>

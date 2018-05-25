@@ -42,7 +42,7 @@ namespace Hovmand.ViewModel.App
 
             NavigationCommands.Add("ActiveLeads", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.App.LeadPage));
+                AppFrame.Navigate(typeof(View.Domain.ActiveLeads));
             }));
 
             NavigationCommands.Add("PendingLeads", new RelayCommand(() =>

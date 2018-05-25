@@ -30,9 +30,9 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Globe" Content="OverView" Tag="OverView"/>
                 <NavigationViewItemSeparator/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="CheckList" Content="ActiveLeads" Tag="ActiveLeads"/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Flag" Content="PendingLeads" Tag="PendingLeads"/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="DisableUpdates" Content="ClosedLeads" Tag="ClosedLeads"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Forward" Content="Active" Tag="ActiveLeads"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Back" Content="Pending" Tag="PendingLeads"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="DisableUpdates" Content="Closed" Tag="ClosedLeads"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Customers" Tag="Customers"/>
             </NavigationView.MenuItems>
