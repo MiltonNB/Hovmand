@@ -3,16 +3,19 @@ using System.ServiceModel.Channels;
 using System.Windows.Input;
 using Windows.UI.Popups;
 using Hovmand.Model.Catalog.Base;
+using Hovmand.ViewModel.Base;
 
 namespace Hovmand.ViewModel.Commands
 {
     public class CreateCommand<T> : ICommand where T : class
     {
         private CatalogBase<T> _catalogBase;
+        private DataViewModelBase<T> _dataViewModelBase;
 
-        public CreateCommand()
+        public CreateCommand(DataViewModelBase<T> dataViewModelBase)
         {
             _catalogBase = new CatalogBase<T>();
+            _dataViewModelBase = dataViewModelBase;
         }
 
         public bool CanExecute(object parameter)
@@ -20,18 +23,9 @@ namespace Hovmand.ViewModel.Commands
             return true;
         }
 
-        public async void Execute(object parameter)
+        public void Execute(object parameter)
         {
-            try
-            {
-                _catalogBase.Create((T)parameter);
-            }
-            catch (InvalidCastException c)
-            {
-                var dialog = new MessageDialog($"Error converting {parameter.ToString()} to {typeof(T)}", $"{c}");
-                await dialog.ShowAsync();
-                throw;
-            }
+            _catalogBase.Create(_dataViewModelBase.DomainObject);
         }
 
         public event EventHandler CanExecuteChanged;
