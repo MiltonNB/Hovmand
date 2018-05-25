@@ -57,7 +57,7 @@ namespace Hovmand.ViewModel.App
 
             NavigationCommands.Add("Customers", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.App.CustomersPage));
+                AppFrame.Navigate(typeof(View.Domain.CustomersPage));
             }));
         }
     }
