@@ -125,6 +125,7 @@
     <Compile Include="ViewModel\Base\DataViewModelBase.cs" />
     <Compile Include="ViewModel\Commands\AuthenticateUserCommand.cs" />
     <Compile Include="ViewModel\Commands\CreateCommand.cs" />
+    <Compile Include="ViewModel\Commands\ReadCommand.cs" />
     <Compile Include="ViewModel\Data\ContactDataViewModel.cs" />
     <Compile Include="ViewModel\Data\CustomerDataViewModel.cs" />
     <Compile Include="ViewModel\Data\LeadDataViewModel.cs" />
