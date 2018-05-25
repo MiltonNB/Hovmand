@@ -5,8 +5,144 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!--<Page.DataContext>
         
+    </Page.DataContext>-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Margin="50,0,50,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Margin="0,50,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Margin="10">
+                            <StackPanel>
+                                <TextBlock Text="Lead ID" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="10">
+                            <StackPanel>
+                                <TextBlock Text="Date" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap" HorizontalAlignment="Right"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="0,-40,0,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0" Margin="10">
+                            <StackPanel>
+                                <TextBox x:Name="productInput" Header="Product:" Height="60" PlaceholderText="Enter product" Width="auto"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="10">
+                            <StackPanel>
+                                <CalendarDatePicker x:Name="expectedDelivery" Header="Expected delivery date" Height="60" MaxWidth="200" HorizontalAlignment="left"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="10,10,0,0">
+                        <StackPanel>
+                            <TextBox x:Name="InformationInput" Header="Information:"  PlaceholderText="Enter information" Height="400" Width="Auto"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="10,10,0,0">
+                        <StackPanel>
+                            <TextBox x:Name="amountInput" Header="Amount:" Height="60" Width="50" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Margin="100,0,0,0">
+                            <TextBox x:Name="priceInput" Header="Price:" Height="60" Width="100" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="1" BorderBrush="DarkGray" BorderThickness="5,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Margin="50">
+                        <StackPanel  Margin="50">
+                            <Grid Grid.Row="0" Margin="0,0,0,10">
+                                <ComboBox x:Name="status" Header="Status" Height="60" HorizontalAlignment="Stretch"/>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <ComboBox x:Name="caseOwner" Header="Case Owner" Height="60" HorizontalAlignment="Stretch"/>
+                            </Grid>
+                            <Grid Grid.Row="3" Margin="0,25,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0">
+                                    <TextBlock Text="Company" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                </Grid>
+
+                                <Grid Grid.Column="1">
+                                    <TextBlock Text="CVR" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0">
+                                    <TextBlock Text="First Name" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                </Grid>
+
+                                <Grid Grid.Column="1">
+                                    <TextBlock Text="Last Name" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0">
+                                    <TextBlock Text="Mail" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                </Grid>
+
+                                <Grid Grid.Column="1">
+                                    <TextBlock Text="Phone" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                </Grid>
+                            </Grid>
+                            <Button x:Name="btnShotCustomer" Content="Show Customer"
+                            Click="OnClickShowCustomer" ClickMode="Hover"
+                            Margin="5" Width="150"
+                            HorizontalAlignment="Left"
+                            Foreground="White"
+                            Background="DarkGray"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>

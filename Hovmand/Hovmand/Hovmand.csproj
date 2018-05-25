@@ -125,7 +125,8 @@
     <Compile Include="ViewModel\Base\DataViewModelBase.cs" />
     <Compile Include="ViewModel\Commands\AuthenticateUserCommand.cs" />
     <Compile Include="ViewModel\Commands\CreateCommand.cs" />
-    <Compile Include="ViewModel\Commands\ReadCommand.cs" />
+    <Compile Include="ViewModel\Commands\DeleteCommand.cs" />
+    <Compile Include="ViewModel\Commands\UpdateCommand.cs" />
     <Compile Include="ViewModel\Data\ContactDataViewModel.cs" />
     <Compile Include="ViewModel\Data\CustomerDataViewModel.cs" />
     <Compile Include="ViewModel\Data\LeadDataViewModel.cs" />
@@ -154,14 +155,14 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Domain\ActiveLeads.xaml.cs">
-      <DependentUpon>ActiveLeads.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Domain\ClosedLeads.xaml.cs">
-      <DependentUpon>ClosedLeads.xaml</DependentUpon>
+    <Compile Include="View\Domain\LeadsPage.xaml.cs">
+      <DependentUpon>LeadsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Domain\CustomerPage.xaml.cs">
       <DependentUpon>CustomerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\CustomersPage.xaml.cs">
+      <DependentUpon>CustomersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Domain\EditOfferPage.xaml.cs">
       <DependentUpon>EditOfferPage.xaml</DependentUpon>
@@ -175,11 +176,14 @@
     <Compile Include="View\Domain\OverviewPage.xaml.cs">
       <DependentUpon>OverviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Domain\PendingLeads.xaml.cs">
-      <DependentUpon>PendingLeads.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Domain\PipelineStatusPage.xaml.cs">
       <DependentUpon>PipelineStatusPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\ProductPage.xaml.cs">
+      <DependentUpon>ProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Domain\ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -229,17 +233,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Domain\ActiveLeads.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Domain\ClosedLeads.xaml">
+    <Page Include="View\Domain\LeadsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Domain\CustomerPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Domain\CustomersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Domain\EditOfferPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -257,13 +261,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Domain\PendingLeads.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Domain\PipelineStatusPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Domain\ProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Domain\ProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

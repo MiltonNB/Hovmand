@@ -20,9 +20,9 @@ namespace Hovmand.View.Domain
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CustomerPage : Page
+    public sealed partial class LeadsPage : Page
     {
-        public CustomerPage()
+        public LeadsPage()
         {
             this.InitializeComponent();
         }
