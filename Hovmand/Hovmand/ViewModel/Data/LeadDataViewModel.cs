@@ -2,7 +2,7 @@
 
 namespace Hovmand.ViewModel.Data
 {
-    public class LeadDataViewModel : DataViewModelBase
+    public class LeadDataViewModel : DataViewModelBase<Lead>
     {
         private Lead _domainObject;
 

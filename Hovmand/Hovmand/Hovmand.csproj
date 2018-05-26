@@ -190,7 +190,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="Assets\vars.txt" />
     <None Include="efpt.config.json" />
     <None Include="Hovmand_TemporaryKey.pfx" />
   </ItemGroup>

@@ -2,10 +2,11 @@
 using Windows.ApplicationModel.Store.Preview.InstallControl;
 using Hovmand.ViewModel.Base;
 using ViewModel.Data.Implementation;
+using System;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class ContactDataViewModel : DataViewModelBase
+    public class ContactDataViewModel : Base.DataViewModelBase<Contact>
     {
         private Contact _domainObject;
 
@@ -73,6 +74,11 @@ namespace Hovmand.ViewModel.Data
                 _domainObject.Customers = value;
                 OnPropertyChanged();
             }
+        }
+
+        private void OnPropertyChanged()
+        {
+            throw new NotImplementedException();
         }
     }
 }

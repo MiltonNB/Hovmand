@@ -9,7 +9,7 @@ namespace Hovmand.ViewModel.Page
 
         public CustomerPageViewModel()
         {
-            _createCommand = new CreateCommand<Customer>();
+            //_createCommand = new CreateCommand<Customer>();
         }
     }
 }

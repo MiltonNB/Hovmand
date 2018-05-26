@@ -19,7 +19,7 @@ namespace Hovmand.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            _catalogBase.Delete((T)parameter);
+            _catalogBase.Delete((int)parameter);
         }
 
         public event EventHandler CanExecuteChanged;
