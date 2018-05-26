@@ -31,8 +31,9 @@ namespace Hovmand.Model.Catalog.Base
             _dbContext.Set<T>().Update(obj);
         }
 
-        public void Delete(T obj)
+        public void Delete(int key)
         {
+            var obj = _dbContext.Set<T>().Find(key);
             _dbContext.Set<T>().Remove(obj);
         }
     }
