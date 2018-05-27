@@ -20,10 +20,7 @@ namespace Hovmand.Model.App
         public bool MatchString(string inputPwNonHashed, string savedPwHashed) 
         {
             var inputHashed = HashString(inputPwNonHashed); //Bruger HashString metoden til at hashe input
-            if (inputPwNonHashed == savedPwHashed) //Sammenligning
-                return true;
-
-            return false;
+            return inputHashed == savedPwHashed;
         }
     }
 }

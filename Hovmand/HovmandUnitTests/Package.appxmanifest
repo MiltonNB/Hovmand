@@ -5,14 +5,14 @@
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   IgnorableNamespaces="uap mp">
 
-  <Identity Name="5d017143-068a-466f-90a5-cbd92ecc6cea"
+  <Identity Name="a522f302-8770-44b6-846f-221de5a3f4f2"
             Publisher="CN=zirr_"
             Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="5d017143-068a-466f-90a5-cbd92ecc6cea" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="a522f302-8770-44b6-846f-221de5a3f4f2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>HovmandUnitTest</DisplayName>
+    <DisplayName>HovmandUnitTests</DisplayName>
     <PublisherDisplayName>zirr_</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -27,12 +27,12 @@
   <Applications>
     <Application Id="vstest.executionengine.universal.App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="HovmandUnitTest.App">
+        EntryPoint="HovmandUnitTests.App">
       <uap:VisualElements
-        DisplayName="HovmandUnitTest"
+        DisplayName="HovmandUnitTests"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="HovmandUnitTest"
+        Description="HovmandUnitTests"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

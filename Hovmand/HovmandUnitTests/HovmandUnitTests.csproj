@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{5DBD5C09-BA3E-407C-8B2A-F110AE93C142}</ProjectGuid>
+    <ProjectGuid>{9EE55A1D-CAED-42D2-9EE8-D607D62381BF}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HovmandUnitTest</RootNamespace>
-    <AssemblyName>HovmandUnitTest</AssemblyName>
+    <RootNamespace>HovmandUnitTests</RootNamespace>
+    <AssemblyName>HovmandUnitTests</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
@@ -16,7 +16,7 @@
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>HovmandUnitTest_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>HovmandUnitTests_TemporaryKey.pfx</PackageCertificateKeyFile>
     <UnitTestPlatformVersion Condition="'$(UnitTestPlatformVersion)' == ''">$(VisualStudioVersion)</UnitTestPlatformVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -111,7 +111,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="HovmandUnitTest_TemporaryKey.pfx" />
+    <None Include="HovmandUnitTests_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\UnitTestApp.rd.xml" />

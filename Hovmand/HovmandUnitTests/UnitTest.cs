@@ -1,17 +1,20 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿
 using Hovmand;
-using Hovmand.Annotations;
+using Hovmand.Model.App;
 using Hovmand.Model.Catalog.Base;
-using Hovmand.Model.Database;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using Windows.UI.Xaml.Controls;
+using Hovmand.ViewModel.App;
 
-namespace HovmandUnitTest
+namespace HovmandUnitTests
 {
     [TestClass]
     public class UnitTest1
     {
-        #region DB unit tests
+        #region Catalog - Adding of objects
 
+        [TestCategory("Catalog - Add")]
         [TestMethod]
         public void AddToCatalogCompleteObject()
         {
@@ -26,6 +29,7 @@ namespace HovmandUnitTest
             cProd.Create(product);
         }
 
+        [TestCategory("Catalog - Add")]
         [TestMethod]
         public void AddToCatalogIncompleteObject()
         {
@@ -37,6 +41,7 @@ namespace HovmandUnitTest
             cProd.Create(product);
         }
 
+        [TestCategory("Catalog - Read")]
         [TestMethod]
         public void ReadFromCatalogKeyExists()
         {
@@ -44,6 +49,7 @@ namespace HovmandUnitTest
             catalogUser.Read(1);
         }
 
+        [TestCategory("Catalog - Read")]
         [TestMethod]
         public void ReadFromCatalogKeyDoesNotExist()
         {
@@ -51,6 +57,7 @@ namespace HovmandUnitTest
             catalogUser.Read(100);
         }
 
+        [TestCategory("Catalog - Update")]
         [TestMethod]
         public void UpdateCatalogCompleteObject()
         {
@@ -65,6 +72,7 @@ namespace HovmandUnitTest
             catalogProduct.Update(product);
         }
 
+        [TestCategory("Catalog - Update")]
         [TestMethod]
         public void UpdateCatalogIncompleteObject()
         {
@@ -79,6 +87,7 @@ namespace HovmandUnitTest
             catalogProduct.Update(product);
         }
 
+        [TestCategory("Catalog - Delete")]
         [TestMethod]
         public void DeleteFromCatalogKeyExists()
         {
@@ -86,11 +95,66 @@ namespace HovmandUnitTest
             catalogProduct.Delete(2);
         }
 
+        [TestCategory("Catalog - Delete")]
         [TestMethod]
         public void DeleteFromCatalogKeyDoesNotExist()
         {
             var catalogProduct = new CatalogBase<Product>();
             catalogProduct.Delete(200);
+        }
+
+
+
+        #endregion
+
+        #region PasswordHash
+
+        [TestCategory("Password hashing")]
+        [TestMethod]
+        public void HashStringAlphanumeric()
+        {
+            var pwhash = new PasswordHash();
+            pwhash.HashString("Unit tests are cool 123");
+        }
+
+        [TestCategory("Password hashing")]
+        [TestMethod]
+        public void HashStringSymbols()
+        {
+            var pwhash = new PasswordHash();
+            pwhash.HashString("&)#¤#");
+        }
+
+        [TestCategory("Password hashing")]
+        [TestMethod]
+        public void HashStringEmpty()
+        {
+            var pwhash = new PasswordHash();
+            pwhash.HashString(String.Empty);
+        }
+
+        [TestCategory("Password hashing")]
+        [TestMethod]
+        public void ComparePasswordsMatching()
+        {
+            var pwhash = new PasswordHash();
+            pwhash.MatchString("i love unit tests", "cd7f7061fc5e921a5ed22ca5ea37beea8d752da0");
+        }
+
+        [TestCategory("Password hashing")]
+        [TestMethod]
+        public void ComparePasswordsNotMatching()
+        {
+            var pwhash = new PasswordHash();
+            pwhash.MatchString("i love unit tests!!", "cd7f7061fc5e921a5ed22ca5ea37beea8d752da0");
+        }
+
+        [TestCategory("Password hashing")]
+        [TestMethod]
+        public void ComparePasswordsEmpty()
+        {
+            var pwhash = new PasswordHash();
+            pwhash.MatchString(String.Empty, String.Empty);
         }
 
         #endregion
