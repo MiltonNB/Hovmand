@@ -4,7 +4,7 @@ using Hovmand.Annotations;
 
 namespace Hovmand.ViewModel.Base
 {
-    public class DataViewModelBase<T> : INotifyPropertyChanged
+    public class DataViewModelBase<T> : INotifyPropertyChanged where T : class
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private T _domainObject;
