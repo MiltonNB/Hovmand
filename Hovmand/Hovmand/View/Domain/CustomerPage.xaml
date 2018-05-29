@@ -6,20 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <!--<Page.DataContext>
+    
+    <Page.DataContext>
         <page:CustomerViewModel/>
-    </Page.DataContext>-->
+    </Page.DataContext>
+
+
     
     <Page.BottomAppBar>
-    <CommandBar >
-        <CommandBar.Content>
-            <TextBlock 
-                           Text="{Binding ViewStateDescription}" />
-        </CommandBar.Content>
-        <AppBarButton Icon="Save" Label="Save" />
+        <CommandBar >
+            <AppBarButton Icon="Save" Label="Save" />
         <AppBarButton Icon="Cancel" Label="Cancel" />
-        <AppBarButton Icon="Delete" Label="Delete" />
+        <AppBarButton Icon="Delete" Label="Delete" Command="{Binding DeleteCommand}" />
     </CommandBar>
     </Page.BottomAppBar>
 

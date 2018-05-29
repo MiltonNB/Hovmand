@@ -126,7 +126,6 @@
     <Compile Include="ViewModel\App\FileViewModel.cs" />
     <Compile Include="ViewModel\App\LockHandler.cs" />
     <Compile Include="ViewModel\Base\DataViewModelBase.cs" />
-    <Compile Include="ViewModel\Commands\AuthenticateUserRelayCommand.cs" />
     <Compile Include="ViewModel\Commands\CreateCommand.cs" />
     <Compile Include="ViewModel\Commands\DeleteCommand.cs" />
     <Compile Include="ViewModel\Commands\UpdateCommand.cs" />

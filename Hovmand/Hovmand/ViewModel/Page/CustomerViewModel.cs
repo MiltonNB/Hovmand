@@ -1,23 +1,44 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using Hovmand.Annotations;
+using Hovmand.Model.Database;
 using Hovmand.ViewModel.Base;
 using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Page
 {
-    public class CustomerViewModel : DataViewModelBase<Customer>
+    public class CustomerViewModel
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private ICommand _createCommand = new CreateCommand<Customer>();
+        private ICommand _deleteCommand = new DeleteCommand<Customer>();
+        private ICommand _updateCommand = new UpdateCommand<Customer>();
+        private HovmanddbContext dbContext = HovmanddbContext.Instance;
+        private Customer _customer = new Customer(); 
+
         public CustomerViewModel()
         {
-            CreateCommand = new CreateCommand<Customer>();
-            DeleteCommand = new DeleteCommand<Customer>();
-            UpdateCommand = new UpdateCommand<Customer>();
         }
 
-        public Customer CustomerDomainObject { get; set; }
+        public Customer CustomerDomainObject
+        {
+            get { return _customer; }
+            set
+            {
+                _customer = value;
+                OnPropertyChanged();
+                Debug.WriteLine(_customer.CustomerId);
+                _updateCommand.CanExecute(true);
+            }
+        }
 
         public int CustomerId
         {
-            get { return CustomerDomainObject.CustomerId; }
+            get { return _customer.CustomerId; }
         }
 
         public int Cvr
@@ -90,22 +111,30 @@ namespace Hovmand.ViewModel.Page
             }
         }
 
+        public List<Customer> Customers
+        {
+            get { return dbContext.Customers.ToList(); }
+        }
+
         public ICommand CreateCommand
         {
-            get { return CreateCommand; }
-            set { CreateCommand = value; }
+            get { return _createCommand; }
         }
 
         public ICommand DeleteCommand
         {
-            get { return DeleteCommand; }
-            set { DeleteCommand = value; }
+            get { return _deleteCommand; }
         }
 
         public ICommand UpdateCommand
         {
-            get { return UpdateCommand; }
-            set { UpdateCommand = value; }
+            get { return _updateCommand; }
+        }
+
+        [NotifyPropertyChangedInvocator]
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
