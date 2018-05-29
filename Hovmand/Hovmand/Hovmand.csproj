@@ -121,7 +121,6 @@
     <Compile Include="Model\Domain\User.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\App\AppViewModel.cs" />
-    <Compile Include="ViewModel\App\AppViewModelInstance.cs" />
     <Compile Include="ViewModel\App\DBHandler.cs" />
     <Compile Include="ViewModel\App\EmailHandler.cs" />
     <Compile Include="ViewModel\App\FileViewModel.cs" />
