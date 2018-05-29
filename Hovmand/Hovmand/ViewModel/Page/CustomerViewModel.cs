@@ -122,18 +122,18 @@ namespace Hovmand.ViewModel.Page
             get { return dbContext.Customers.ToList(); }
         }
 
-        public void DeleteCustomer()
+        private void DeleteCustomer()
         {
             _customerCatalog.Delete(CustomerId);
             dbContext.SaveChanges();
         }
 
-        public void UpdateCustomer()
+        private void UpdateCustomer()
         {
     
         }
 
-        public void CreateCustomer()
+        private void CreateCustomer()
         {
             
         }
