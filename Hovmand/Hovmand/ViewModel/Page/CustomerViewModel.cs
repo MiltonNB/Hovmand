@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -8,17 +10,18 @@ using Commands.Implementation;
 using Hovmand.Annotations;
 using Hovmand.Model.Catalog.Base;
 using Hovmand.Model.Database;
+using Hovmand.ViewModel.App;
 using Hovmand.ViewModel.Base;
 using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Page
 {
-    public class CustomerViewModel
+    public class CustomerViewModel : INotifyCollectionChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private HovmanddbContext dbContext = HovmanddbContext.Instance;
+        private HovmanddbContext _dbContext = HovmanddbContext.Instance;
         private Customer _customer = new Customer();
         private CatalogBase<Customer> _customerCatalog;
+        private AppViewModel appVm;
 
         public CustomerViewModel()
         {
@@ -26,6 +29,12 @@ namespace Hovmand.ViewModel.Page
             DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
             UpdateCustomerCommand = new RelayCommand(UpdateCustomer);
             CreateCustomerCommand = new RelayCommand(CreateCustomer);
+            appVm = AppViewModel.appVm;
+            Customers.CollectionChanged += CollectionChanged;
+
+            _customerCatalog.Create(new Customer() { Cvr = 1, CompanyName = "Test1", Address = "Test1", Phone = 1, Mail = "Test1", FkContactId = 4, FkLocationId = 4 });
+            _customerCatalog.Create(new Customer() { Cvr = 2, CompanyName = "Test2", Address = "Test2", Phone = 2, Mail = "Test2", FkContactId = 4, FkLocationId = 4 });
+            _dbContext.SaveChanges();
         }
 
         public RelayCommand DeleteCustomerCommand { get; set; }
@@ -138,30 +147,35 @@ namespace Hovmand.ViewModel.Page
         }
 
         public List<Customer> Customers
+        public ObservableCollection<Customer> Customers
         {
-            get { return dbContext.Customers.ToList(); }
+            get { return new ObservableCollection<Customer>(_dbContext.Customers);}
         }
 
         private void DeleteCustomer()
         {
+            if (CustomerId == 0) return;
             _customerCatalog.Delete(CustomerId);
-            dbContext.SaveChanges();
+            _dbContext.SaveChanges();
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove));
         }
 
         private void UpdateCustomer()
         {
-    
+            appVm.NavigationCommands["Customer"].Execute(null);
         }
 
         private void CreateCustomer()
         {
-            
+            appVm.NavigationCommands["Customer"].Execute(null);
         }
 
-        [NotifyPropertyChangedInvocator]
+        public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
     }
 }
