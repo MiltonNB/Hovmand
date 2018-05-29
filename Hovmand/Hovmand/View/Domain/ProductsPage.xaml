@@ -66,7 +66,6 @@
                         <TextBlock Grid.Column="3" VerticalAlignment="Center" Text="4"/>
                         <TextBlock Grid.Column="4" VerticalAlignment="Center" Text="5"/>
                     </Grid>
-
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -21,10 +21,10 @@
     
     <Page.BottomAppBar>
         <CommandBar Style="{StaticResource CommandBarStyle}">
-            <AppBarButton Icon="Add" Label="Add" Command="{Binding NavigationCommands[Add]}"/>
-            <AppBarButton Icon="Save" Label="Save" Command="{Binding NavigationCommands[Save]}"/>
-            <AppBarButton Icon="Edit" Label="Edit" Command="{Binding NavigationCommands[Edit]}"/>
-            <AppBarButton Icon="Delete" Label="Delete" Command="{Binding NavigationCommands[Delete]}"/>
+            <AppBarButton Icon="Add" Label="Add"/>
+            <AppBarButton Icon="Save" Label="Save"/>
+            <AppBarButton Icon="Edit" Label="Edit"/>
+            <AppBarButton Icon="Delete" Label="Delete"/>
         </CommandBar>
     </Page.BottomAppBar>
 

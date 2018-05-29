@@ -10,7 +10,7 @@
     <Page.DataContext>
         <page:LeadViewModel/>
     </Page.DataContext>
-    
+
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Icon="Save" Label="Save" 
@@ -35,6 +35,7 @@
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
 
                     <Grid Grid.Row="0" Margin="0,50,0,0">
@@ -44,12 +45,12 @@
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0" Margin="10">
                             <StackPanel>
-                                <TextBlock Text="Lead ID" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                <TextBlock Text="Lead ID" Width="auto" Height="60" TextWrapping="Wrap"/>
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10">
                             <StackPanel>
-                                <TextBlock Text="Date" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap" HorizontalAlignment="Right"/>
+                                <TextBlock Text="Date" Width="auto" Height="60" TextWrapping="Wrap" HorizontalAlignment="Right"/>
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -84,10 +85,53 @@
                         <StackPanel Margin="100,0,0,0">
                             <TextBox x:Name="priceInput" Header="Price:" Height="60" Width="100" HorizontalAlignment="Left"/>
                         </StackPanel>
+                        <StackPanel Margin="200,23,0,0">
+                            <Button x:Name="btnGenerateOffer" Content="Generate new offer" Width="200" HorizontalAlignment="Right"
+                                ClickMode="Hover"
+                                Margin="5"
+                                Foreground="White"
+                                Background="DarkGray"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="4" Margin="10,10,0,0">
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding Offers}">
+                                <ListView.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid Padding="0,12,0,12" Background="{ThemeResource SystemBaseLowColor}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Padding="20,0,0,0" Text="Offer"  Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="1" Text="Number" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                            <TextBlock Grid.Column="2" Text="Date" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.HeaderTemplate>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Height="48">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="1" />
+                                            <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="2"/>
+                                            <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="3"/>
+                                        </Grid>
+
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+
+                            </ListView>
+                        </StackPanel>
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Column="1" BorderBrush="DarkGray" BorderThickness="5,0,0,0">
+                <Grid Grid.Column="1" BorderBrush="DarkGray" BorderThickness="2,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
@@ -96,13 +140,35 @@
 
                     <StackPanel Margin="50">
                         <StackPanel  Margin="50">
+                            <TextBlock Text="Case" FontSize="20" Width="auto" Height="60" TextWrapping="Wrap" Margin="0,-20,0,-20"/>
+                            <Rectangle  HorizontalAlignment="Stretch" VerticalAlignment="Center" Fill="Gray" Height="2" Margin="0,0,0,20"/>
                             <Grid Grid.Row="0" Margin="0,0,0,10">
                                 <ComboBox x:Name="status" Header="Status" Height="60" HorizontalAlignment="Stretch"/>
                             </Grid>
                             <Grid Grid.Row="1">
                                 <ComboBox x:Name="caseOwner" Header="Case Owner" Height="60" HorizontalAlignment="Stretch"/>
                             </Grid>
-                            <Grid Grid.Row="3" Margin="0,25,0,0">
+                            <TextBlock Text="Pipeline" FontSize="20" Width="auto" Height="60" TextWrapping="Wrap" Margin="0,20,0,-20"/>
+                            <Rectangle  HorizontalAlignment="Stretch" VerticalAlignment="Center" Fill="Gray" Height="2" Margin="0,0,0,20"/>
+                            <Grid Grid.Row="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Margin="0,0,0,-20">
+                                    <StackPanel>
+                                        <TextBlock Text="Last edited date" Width="auto" Height="60" TextWrapping="Wrap" HorizontalAlignment="Right"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <StackPanel>
+                                        <TextBox x:Name="PipelineInformationInput" Header="Pipeline Information:"  PlaceholderText="Enter pipeline information" Height="200" Margin="0,-25,0,0" Width="Auto"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                            <TextBlock Text="Contact information" FontSize="20" Width="auto" Height="60" TextWrapping="Wrap" Margin="0,20,0,-20"/>
+                            <Rectangle  HorizontalAlignment="Stretch" VerticalAlignment="Center" Fill="Gray" Height="2" Margin="0,0,0,20"/>
+                            <Grid Grid.Row="4">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="1*"/>
@@ -144,12 +210,6 @@
                                     <TextBlock Text="Phone" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
                                 </Grid>
                             </Grid>
-                            <Button x:Name="btnShotCustomer" Content="Show Customer"
-                            Click="OnClickShowCustomer" ClickMode="Hover"
-                            Margin="5" Width="150"
-                            HorizontalAlignment="Left"
-                            Foreground="White"
-                            Background="DarkGray"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
