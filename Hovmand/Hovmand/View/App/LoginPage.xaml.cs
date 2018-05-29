@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Hovmand.Model.App;
 using Hovmand.Model.Catalog.Base;
 using Hovmand.Model.Catalog.DomainCatalogs;
 using Hovmand.Model.Database;
@@ -18,14 +21,22 @@ namespace Hovmand.View.App
     /// </summary>
     public sealed partial class LoginPage : Page
     {
+        private HovmanddbContext dbContext;
+        private PasswordHash pwHash;
+        private List<User> userList;
+        private Task task;
+
         public LoginPage()
         {
             this.InitializeComponent();
+            dbContext = HovmanddbContext.Instance;
+            pwHash = new PasswordHash();
+            task = new Task(() => userList = dbContext.Users.ToList());
+            task.Start();
         }
 
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            //ErrorMessage.Text = "";
             CheckPW();
         }
 
@@ -38,59 +49,24 @@ namespace Hovmand.View.App
 
         private async void CheckPW()
         {
-            HovmanddbContext context = HovmanddbContext.Instance;
-            
-            Product product = new Product()
+            task.Wait();
+
+            string passwordH = pwHash.HashString(this.PasswordTextBox.Text);
+            bool successfulLogin = false;
+
+            foreach (var user in userList)
             {
-                Information = "",
-                InStock = 1,
-                Price = 2.0,
-                Title = "",
-            };
+                if (user.Email == this.UsernameTextBox.Text && user.Password == passwordH)
+                    successfulLogin = true;
+            }
 
-            User user = new User()
+            if (successfulLogin)
+                this.Frame.Navigate(typeof(MainPage));
+            else
             {
-                Email = "",
-                Firstname = "",
-                Lastname = "",
-                Password = "",
-                Title = "",
-            };
-
-            Lead lead = new Lead()
-            {
-                DateAdded = DateTime.Now,
-                Information = "",
-                Status = ""
-            };
-
-            Offer offer = new Offer()
-            {
-                Date = DateTime.Now,
-                Information = "w2123",
-                Price = 2.0,
-                ProductAmount = 1,
-                FkLeadId = 1,
-                FkProductId = 1,
-            };
-
-            //context.Products.Add(product);
-            //context.Users.Add(user);
-            //context.Leads.Add(lead);
-            //context.Offers.Add(offer);
-            CatalogBase<Offer> cb = new CatalogBase<Offer>();
-
-            cb.Create(offer);
-
-
-            var oc = new CatalogBase<Offer>();
-
-            Offer ofc = (Offer)oc.Read(1);
-            Debug.WriteLine("OFC" + ofc.Information + ofc.Date);
-
-
-            await context.SaveChangesAsync();
-            Debug.WriteLine("Saved successfully.");
+                var dialog = new MessageDialog("Wrong email/password.");
+                await dialog.ShowAsync();
+            }
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿namespace Hovmand.ViewModel.Page
 {
-    public class OfferPageViewModel
+    public class LoginPageViewModel
     {
-        
     }
 }
