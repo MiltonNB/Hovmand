@@ -3,7 +3,6 @@ using Windows.UI.Xaml.Controls;
 using Commands.Implementation;
 using Hovmand.Model.App;
 using Hovmand.Model.Database;
-using Hovmand.ViewModel.Data;
 
 namespace Hovmand.ViewModel.Commands
 {

@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Hovmand.ViewModel.Base;
 using Hovmand.ViewModel.Commands;
 
-namespace Hovmand.ViewModel.Data
+namespace Hovmand.ViewModel.Page
 {
     public class CustomerViewModel : DataViewModelBase<Customer>
     {

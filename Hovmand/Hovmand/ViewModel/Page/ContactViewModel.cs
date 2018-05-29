@@ -1,12 +1,8 @@
 ﻿using System.Collections.Generic;
-using Windows.ApplicationModel.Store.Preview.InstallControl;
-using Hovmand.ViewModel.Base;
-using ViewModel.Data.Implementation;
-using System;
 using System.Windows.Input;
 using Hovmand.ViewModel.Commands;
 
-namespace Hovmand.ViewModel.Data
+namespace Hovmand.ViewModel.Page
 {
     public class ContactViewModel : Base.DataViewModelBase<Contact>
     {
