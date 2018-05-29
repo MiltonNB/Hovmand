@@ -164,9 +164,6 @@
     <Compile Include="View\Domain\OverviewPage.xaml.cs">
       <DependentUpon>OverviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Domain\PipelineStatusPage.xaml.cs">
-      <DependentUpon>PipelineStatusPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Domain\ProductPage.xaml.cs">
       <DependentUpon>ProductPage.xaml</DependentUpon>
     </Compile>
@@ -237,10 +234,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Domain\OverviewPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Domain\PipelineStatusPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
