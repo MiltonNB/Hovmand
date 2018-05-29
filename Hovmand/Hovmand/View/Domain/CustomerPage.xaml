@@ -2,17 +2,29 @@
     x:Class="Hovmand.View.Domain.CustomerPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:page="Hovmand.ViewModel.Page."
+    xmlns:local="using:Hovmand.View.Domain"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:page1="using:Hovmand.ViewModel.Page"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
-    <Page.DataContext>
-        <page1:CustomerViewModel/>
-    </Page.DataContext>
-    
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+    <CommandBar Style="{StaticResource CommandBarStyle}">
+        <CommandBar.Content>
+            <TextBlock Style="{StaticResource TextBlockCommandContentStyle}"
+                           Text="{Binding ViewStateDescription}" />
+        </CommandBar.Content>
+        <AppBarButton Icon="Save" Label="Save" 
+                          IsEnabled="{Binding ControlStates[SaveControl].Enabled}"
+                          Command="{Binding DataCommand[SaveCommand]}"/>
+        <AppBarButton Icon="Cancel" Label="Cancel" 
+                          IsEnabled="{Binding ControlStates[CancelControl].Enabled}"
+                          Command="{Binding DataCommand[CancelCommand]}"/>
+        <AppBarButton Icon="Delete" Label="Delete" 
+                          IsEnabled="{Binding ControlStates[DeleteControl].Enabled}"
+                          Command="{Binding DataCommand[DeleteCommand]}"/>
+    </CommandBar>
+    </Page.BottomAppBar>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ScrollViewer>
             <Grid Margin="100">
