@@ -20,7 +20,7 @@
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView ItemsSource="{Binding Customers}" SelectedItem="{Binding CustomerDomainObject, Mode=TwoWay}">
+        <ListView ItemsSource="{Binding Customers, UpdateSourceTrigger=Default}" SelectedItem="{Binding CustomerDomainObject, Mode=TwoWay}">
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <Grid Padding="0,12,0,12" >

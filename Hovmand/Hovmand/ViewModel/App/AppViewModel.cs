@@ -9,10 +9,12 @@ namespace Hovmand.ViewModel.App
     public class AppViewModel : AppViewModelBase
     {
         private NavigationViewItem _selectedMenuItem;
+        public static AppViewModel AppVm;
 
         public AppViewModel()
         {
             _selectedMenuItem = null;
+            AppVm = this;
         }
 
         public NavigationViewItem SelectedMenuItem
@@ -59,6 +61,11 @@ namespace Hovmand.ViewModel.App
             NavigationCommands.Add("Customers", new RelayCommand(() =>
             {
                 AppFrame.Navigate(typeof(View.Domain.CustomersPage));
+            }));
+
+            NavigationCommands.Add("Customer", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.Domain.CustomerPage));
             }));
         }
     }
