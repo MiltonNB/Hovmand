@@ -23,8 +23,9 @@
         
         <NavigationView Header="Hovmand"
                         Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+                        IsBackButtonVisible="Collapsed"
                         OpenPaneLength="150"
-                        CompactModeThresholdWidth="1280"
+                        CompactModeThresholdWidth="800"
                         SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}"
                         ExpandedModeThresholdWidth="3840">
             <NavigationView.MenuItems>
