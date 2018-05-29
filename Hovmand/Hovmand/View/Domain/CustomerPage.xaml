@@ -7,25 +7,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Page.DataContext>
+    <!--<Page.DataContext>
         <page:CustomerViewModel/>
-    </Page.DataContext>
+    </Page.DataContext>-->
     
     <Page.BottomAppBar>
-    <CommandBar Style="{StaticResource CommandBarStyle}">
+    <CommandBar >
         <CommandBar.Content>
-            <TextBlock Style="{StaticResource TextBlockCommandContentStyle}"
+            <TextBlock 
                            Text="{Binding ViewStateDescription}" />
         </CommandBar.Content>
-        <AppBarButton Icon="Save" Label="Save" 
-                          IsEnabled="{Binding ControlStates[SaveControl].Enabled}"
-                          Command="{Binding DataCommand[SaveCommand]}"/>
-        <AppBarButton Icon="Cancel" Label="Cancel" 
-                          IsEnabled="{Binding ControlStates[CancelControl].Enabled}"
-                          Command="{Binding DataCommand[CancelCommand]}"/>
-        <AppBarButton Icon="Delete" Label="Delete" 
-                          IsEnabled="{Binding ControlStates[DeleteControl].Enabled}"
-                          Command="{Binding DataCommand[DeleteCommand]}"/>
+        <AppBarButton Icon="Save" Label="Save" />
+        <AppBarButton Icon="Cancel" Label="Cancel" />
+        <AppBarButton Icon="Delete" Label="Delete" />
     </CommandBar>
     </Page.BottomAppBar>
 

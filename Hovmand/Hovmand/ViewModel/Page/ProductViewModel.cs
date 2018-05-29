@@ -6,9 +6,8 @@ namespace Hovmand.ViewModel.Page
 {
     public class ProductViewModel : DataViewModelBase<Product>
     {
-        public ProductViewModel(Product product = null)
+        public ProductViewModel()
         {
-            ProductDomainObject = product;
             CreateCommand = new CreateCommand<Product>();
             DeleteCommand = new DeleteCommand<Product>();
             UpdateCommand = new UpdateCommand<Product>();

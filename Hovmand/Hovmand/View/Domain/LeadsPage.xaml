@@ -12,9 +12,9 @@
     </Page.DataContext>
     
     <Page.BottomAppBar>
-        <CommandBar Style="{StaticResource CommandBarStyle}">
+        <CommandBar >
             <CommandBar.Content>
-                <TextBlock Style="{StaticResource TextBlockCommandContentStyle}"
+                <TextBlock 
                            Text="{Binding ViewStateDescription}" />
             </CommandBar.Content>
             <AppBarButton Icon="Add" Label="Create" 

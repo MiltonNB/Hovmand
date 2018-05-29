@@ -6,9 +6,8 @@ namespace Hovmand.ViewModel.Page
 {
     public class CustomerViewModel : DataViewModelBase<Customer>
     {
-        public CustomerViewModel(Customer domainObject = null)
+        public CustomerViewModel()
         {
-            CustomerDomainObject = domainObject;
             CreateCommand = new CreateCommand<Customer>();
             DeleteCommand = new DeleteCommand<Customer>();
             UpdateCommand = new UpdateCommand<Customer>();
