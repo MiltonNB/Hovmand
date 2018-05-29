@@ -2,6 +2,7 @@
 using Windows.UI.Xaml.Controls;
 using Commands.Implementation;
 using ViewModel.App.Implementation;
+using Hovmand.View.App;
 
 namespace Hovmand.ViewModel.App
 {
@@ -35,29 +36,24 @@ namespace Hovmand.ViewModel.App
 
         public override void AddCommands()
         {
-            NavigationCommands.Add("OverView", new RelayCommand(() =>
+            NavigationCommands.Add("Add", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.App.OverviewPage));
+                AppFrame.Navigate(typeof(FileView));
             }));
 
-            NavigationCommands.Add("ActiveLeads", new RelayCommand(() =>
+            NavigationCommands.Add("Save", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.Domain.LeadsPage));
+                AppFrame.Navigate(typeof(FileView));
             }));
 
-            NavigationCommands.Add("PendingLeads", new RelayCommand(() =>
+            NavigationCommands.Add("Edit", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.Domain.LeadsPage));
-            }));
-        
-            NavigationCommands.Add("ClosedLeads", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(View.Domain.LeadsPage));
+                AppFrame.Navigate(typeof(FileView));
             }));
 
-            NavigationCommands.Add("Customers", new RelayCommand(() =>
+            NavigationCommands.Add("Delete", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.Domain.CustomersPage));
+                AppFrame.Navigate(typeof(FileView));
             }));
         }
     }

@@ -123,6 +123,7 @@
     <Compile Include="ViewModel\App\AppViewModel.cs" />
     <Compile Include="ViewModel\App\DBHandler.cs" />
     <Compile Include="ViewModel\App\EmailHandler.cs" />
+    <Compile Include="ViewModel\App\FileViewModel.cs" />
     <Compile Include="ViewModel\App\LockHandler.cs" />
     <Compile Include="ViewModel\Base\DataViewModelBase.cs" />
     <Compile Include="ViewModel\Commands\AuthenticateUserCommand.cs" />

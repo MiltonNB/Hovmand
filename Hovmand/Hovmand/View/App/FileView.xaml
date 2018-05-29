@@ -4,11 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Hovmand.ViewModel.App"
     mc:Ignorable="d">
 
-    <!--<Page.DataContext>
-        --><!--<vm:FileViewModel/>--><!--
-    </Page.DataContext>-->
+    <Page.DataContext>
+        <vm:FileViewModel/>
+    </Page.DataContext>
 
     <Page.Resources>
         <ResourceDictionary>
@@ -20,9 +21,10 @@
     
     <Page.BottomAppBar>
         <CommandBar Style="{StaticResource CommandBarStyle}">
-            <AppBarButton Icon="Stop" Label="Quit" Command="{Binding NavigationCommands[Quit]}"/>
-            <AppBarButton Icon="Sync" Label="Load" Command="{Binding NavigationCommands[Load]}"/>
+            <AppBarButton Icon="Add" Label="Add" Command="{Binding NavigationCommands[Add]}"/>
             <AppBarButton Icon="Save" Label="Save" Command="{Binding NavigationCommands[Save]}"/>
+            <AppBarButton Icon="Edit" Label="Edit" Command="{Binding NavigationCommands[Edit]}"/>
+            <AppBarButton Icon="Delete" Label="Delete" Command="{Binding NavigationCommands[Delete]}"/>
         </CommandBar>
     </Page.BottomAppBar>
 
