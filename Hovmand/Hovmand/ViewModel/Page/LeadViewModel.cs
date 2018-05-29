@@ -91,6 +91,36 @@ namespace Hovmand.ViewModel.Page
             }
         }
 
+        public Customer FkCustomer
+        {
+            get { return LeadDomainObject.FkCustomers; }
+            set
+            {
+                LeadDomainObject.FkCustomers = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public User FkUser
+        {
+            get { return LeadDomainObject.FkUser; }
+            set
+            {
+                LeadDomainObject.FkUser = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Pipeline FkPipeline
+        {
+            get { return LeadDomainObject.FkPipeline; }
+            set
+            {
+                LeadDomainObject.FkPipeline = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand CreateCommand
         {
             get { return _createCommand; }

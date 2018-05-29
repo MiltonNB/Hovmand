@@ -49,11 +49,11 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="1" />
-                        <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="2"/>
-                        <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="3"/>
-                        <TextBlock Grid.Column="3" VerticalAlignment="Center" Text="4"/>
-                        <TextBlock Grid.Column="4" VerticalAlignment="Center" Text="5"/>
+                        <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="{Binding FkContact.Firstname}" />
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding Phone}"/>
+                        <TextBlock Grid.Column="2" VerticalAlignment="Center" Text="{Binding Mail}"/>
+                        <TextBlock Grid.Column="3" VerticalAlignment="Center" Text="{Binding CompanyName}"/>
+                        <TextBlock Grid.Column="4" VerticalAlignment="Center" Text="{Binding Address}"/>
                     </Grid>
                     
                 </DataTemplate>
