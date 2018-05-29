@@ -6,10 +6,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <!--<Page.DataContext>
-        <commands:AuthenticateUserCommand/>
-    </Page.DataContext>-->
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <Grid.ColumnDefinitions>
@@ -19,7 +15,7 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
             <TextBlock Text="HOVMAND" FontWeight="Bold" FontSize="54" TextAlignment="Center" Foreground="#af1e23"/>
             <TextBlock x:Name="ErrorMessage" Text="" FontSize="20" Margin="4" Foreground="Red" TextAlignment="Center"/>
-            <TextBlock Text="Enter your username below" Margin="0, 0, 0, 10"
+            <TextBlock Text="Enter your email address below" Margin="0, 0, 0, 10"
                        TextWrapping="Wrap" Width="300"
                        TextAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
             <TextBox x:Name="UsernameTextBox" Margin="4" Width="250"/>
