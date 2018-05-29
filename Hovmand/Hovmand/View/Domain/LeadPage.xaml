@@ -175,11 +175,11 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Grid Grid.Column="0">
-                                    <TextBlock Text="Company" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                    <TextBlock Text="Company" Width="auto" Height="60" TextWrapping="Wrap"/>
                                 </Grid>
 
                                 <Grid Grid.Column="1">
-                                    <TextBlock Text="CVR" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                    <TextBlock Text="CVR" Width="auto" Height="60" TextWrapping="Wrap"/>
                                 </Grid>
                             </Grid>
                             <Grid Grid.Row="4">
@@ -189,11 +189,11 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Grid Grid.Column="0">
-                                    <TextBlock Text="First Name" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                    <TextBlock Text="First Name" Width="auto" Height="60" TextWrapping="Wrap"/>
                                 </Grid>
 
                                 <Grid Grid.Column="1">
-                                    <TextBlock Text="Last Name" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                    <TextBlock Text="Last Name" Width="auto" Height="60" TextWrapping="Wrap"/>
                                 </Grid>
                             </Grid>
                             <Grid Grid.Row="5">
@@ -203,11 +203,11 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Grid Grid.Column="0">
-                                    <TextBlock Text="Mail" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                    <TextBlock Text="Mail" Width="auto" Height="60" TextWrapping="Wrap"/>
                                 </Grid>
 
                                 <Grid Grid.Column="1">
-                                    <TextBlock Text="Phone" Width="auto" IsTextSelectionEnabled="True" Height="60" TextWrapping="Wrap"/>
+                                    <TextBlock Text="Phone" Width="auto" Height="60" TextWrapping="Wrap"/>
                                 </Grid>
                             </Grid>
                         </StackPanel>
