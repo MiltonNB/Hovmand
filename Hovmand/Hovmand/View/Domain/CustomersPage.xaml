@@ -2,11 +2,14 @@
     x:Class="Hovmand.View.Domain.CustomersPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Hovmand.View.Domain"
     xmlns:vm="using:Hovmand.ViewModel.Page"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:CustomerViewModel/>
+    </Page.DataContext>
 
     <Page.BottomAppBar>
         <CommandBar Style="{StaticResource CommandBarStyle}">
@@ -25,10 +28,6 @@
                           Command="{Binding DataCommand[DeleteCommand]}"/>
         </CommandBar>
     </Page.BottomAppBar>
-
-    <Page.DataContext>
-        <vm:CustomerViewModel/>
-    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView ItemsSource="{Binding Customers}">

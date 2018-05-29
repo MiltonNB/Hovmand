@@ -116,7 +116,7 @@ namespace Hovmand.ViewModel.App
                 if (retVal == DialogWithReturnValue.ReturnValueType.OK)
                 {
                     DomainModel.Instance.LoadEnds += OnLoadingEnds;
-                    await DomainModel.Instance.LoadAsync();
+                    //await DomainModel.Instance.LoadAsync();
                 }
                 else
                 {
@@ -131,7 +131,7 @@ namespace Hovmand.ViewModel.App
                 if (retVal == DialogWithReturnValue.ReturnValueType.OK)
                 {
                     DomainModel.Instance.LoadEnds += OnSavingEnds;
-                    await DomainModel.Instance.SaveAsync();
+                    //await DomainModel.Instance.SaveAsync();
                 }
                 else
                 {
@@ -146,7 +146,7 @@ namespace Hovmand.ViewModel.App
                 if (retVal == DialogWithReturnValue.ReturnValueType.OK)
                 {
                     DomainModel.Instance.LoadEnds += OnSavingEnds;
-                    await DomainModel.Instance.SaveAsync();
+                    //await DomainModel.Instance.SaveAsync();
                 }
                 else
                 {
@@ -161,7 +161,7 @@ namespace Hovmand.ViewModel.App
                 if (retVal == DialogWithReturnValue.ReturnValueType.OK)
                 {
                     DomainModel.Instance.LoadEnds += OnSavingEnds;
-                    await DomainModel.Instance.SaveAsync();
+                    //await DomainModel.Instance.SaveAsync();
                 }
                 else
                 {
