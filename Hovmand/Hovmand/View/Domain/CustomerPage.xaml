@@ -16,8 +16,8 @@
     <Page.BottomAppBar>
         <CommandBar >
             <AppBarButton Icon="Save" Label="Save" />
-        <AppBarButton Icon="Cancel" Label="Cancel" />
-        <AppBarButton Icon="Delete" Label="Delete" Command="{Binding DeleteCommand}" />
+        <AppBarButton Icon="Cancel" Label="Cancel" Command="{Binding NavCancelCreationCommand}"/>
+        <AppBarButton Icon="Delete" Label="Delete"/>
     </CommandBar>
     </Page.BottomAppBar>
 

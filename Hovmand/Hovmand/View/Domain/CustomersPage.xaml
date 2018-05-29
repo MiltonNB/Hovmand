@@ -13,8 +13,8 @@
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Icon="Add" Label="Create" Command="{Binding CreateCustomerCommand}"/>
-            <AppBarButton Icon="Edit" Label="Edit" Command="{Binding UpdateCustomerCommand}"/>
+            <AppBarButton Icon="Add" Label="Create" Command="{Binding NavCreateCustomerCommand}"/>
+            <AppBarButton Icon="Edit" Label="Edit" Command="{Binding NavUpdateCustomerCommand}"/>
             <AppBarButton Icon="Delete" Label="Delete" Command="{Binding DeleteCustomerCommand}"/>
         </CommandBar>
     </Page.BottomAppBar>
