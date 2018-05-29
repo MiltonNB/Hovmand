@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using Commands.Implementation;
 using Hovmand.Annotations;
+using Hovmand.Model.Catalog.Base;
 using Hovmand.Model.Database;
 using Hovmand.ViewModel.Base;
 using Hovmand.ViewModel.Commands;
@@ -14,29 +16,29 @@ namespace Hovmand.ViewModel.Page
     public class CustomerViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private CreateCommand<Customer> _createCommand = new CreateCommand<Customer>();
-        private DeleteCommand<Customer> _deleteCommand = new DeleteCommand<Customer>();
-        private ICommand _updateCommand = new UpdateCommand<Customer>();
         private HovmanddbContext dbContext = HovmanddbContext.Instance;
-        private Customer _customer = new Customer(); 
+        private Customer _customer = new Customer();
+        private CatalogBase<Customer> _customerCatalog;
 
         public CustomerViewModel()
         {
+            _customerCatalog = new CatalogBase<Customer>();
+            DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
+            UpdateCustomerCommand = new RelayCommand(UpdateCustomer);
+            CreateCustomerCommand = new RelayCommand(CreateCustomer);
         }
+
+        public RelayCommand DeleteCustomerCommand { get; set; }
+        public RelayCommand UpdateCustomerCommand { get; set; }
+        public RelayCommand CreateCustomerCommand { get; set; }
 
         public Customer CustomerDomainObject
         {
-            get
-            {
-
-                return _customer; 
-            }
+            get => _customer;
             set
             {
                 _customer = value;
                 OnPropertyChanged();
-                Debug.WriteLine(_customer.CustomerId);
-                _deleteCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -120,19 +122,20 @@ namespace Hovmand.ViewModel.Page
             get { return dbContext.Customers.ToList(); }
         }
 
-        public ICommand CreateCommand
+        public void DeleteCustomer()
         {
-            get { return _createCommand; }
+            _customerCatalog.Delete(CustomerId);
+            dbContext.SaveChanges();
         }
 
-        public ICommand DeleteCommand
+        public void UpdateCustomer()
         {
-            get { return _deleteCommand; }
+    
         }
 
-        public ICommand UpdateCommand
+        public void CreateCustomer()
         {
-            get { return _updateCommand; }
+            
         }
 
         [NotifyPropertyChangedInvocator]
