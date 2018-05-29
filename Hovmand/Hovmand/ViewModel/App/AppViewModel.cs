@@ -60,28 +60,6 @@ namespace Hovmand.ViewModel.App
             {
                 AppFrame.Navigate(typeof(View.Domain.CustomersPage));
             }));
-
-            // FileViewBar
-
-            NavigationCommands.Add("Add", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(FileView));
-            }));
-
-            NavigationCommands.Add("Save", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(FileView));
-            }));
-
-            NavigationCommands.Add("Edit", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(FileView));
-            }));
-
-            NavigationCommands.Add("Delete", new RelayCommand(() =>
-            {
-                AppFrame.Navigate(typeof(FileView));
-            }));
         }
     }
 }
