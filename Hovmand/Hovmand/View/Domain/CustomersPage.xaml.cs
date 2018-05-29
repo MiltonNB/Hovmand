@@ -24,7 +24,7 @@ namespace Hovmand.View.Domain
     {
         public CustomersPage()
         {
-            this.InitializeComponent();
+            this.InitializeComponent(); 
         }
     }
 }

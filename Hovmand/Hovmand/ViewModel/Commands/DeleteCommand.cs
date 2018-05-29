@@ -23,5 +23,11 @@ namespace Hovmand.ViewModel.Commands
         }
 
         public event EventHandler CanExecuteChanged;
+
+        public void RaiseCanExecuteChanged()
+        {
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        }
+
     }
 }

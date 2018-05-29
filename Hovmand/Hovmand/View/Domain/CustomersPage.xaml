@@ -15,7 +15,7 @@
         <CommandBar>
             <AppBarButton Icon="Add" Label="Create" />
             <AppBarButton Icon="Edit" Label="Edit" />
-            <AppBarButton Icon="Delete" Label="Delete" CommandParameter="{Binding CustomerId}" Command="{Binding DeleteCommand}"/>
+            <AppBarButton Icon="Delete" Label="Delete" CommandParameter="{Binding CustomerDomainObject.CustomerId}" Command="{Binding DeleteCommand}"/>
         </CommandBar>
     </Page.BottomAppBar>
 

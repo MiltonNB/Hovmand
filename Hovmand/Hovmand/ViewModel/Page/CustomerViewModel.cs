@@ -14,8 +14,8 @@ namespace Hovmand.ViewModel.Page
     public class CustomerViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private ICommand _createCommand = new CreateCommand<Customer>();
-        private ICommand _deleteCommand = new DeleteCommand<Customer>();
+        private CreateCommand<Customer> _createCommand = new CreateCommand<Customer>();
+        private DeleteCommand<Customer> _deleteCommand = new DeleteCommand<Customer>();
         private ICommand _updateCommand = new UpdateCommand<Customer>();
         private HovmanddbContext dbContext = HovmanddbContext.Instance;
         private Customer _customer = new Customer(); 
@@ -26,13 +26,17 @@ namespace Hovmand.ViewModel.Page
 
         public Customer CustomerDomainObject
         {
-            get { return _customer; }
+            get
+            {
+
+                return _customer; 
+            }
             set
             {
                 _customer = value;
                 OnPropertyChanged();
                 Debug.WriteLine(_customer.CustomerId);
-                _updateCommand.CanExecute(true);
+                _deleteCommand.RaiseCanExecuteChanged();
             }
         }
 
