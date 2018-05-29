@@ -15,9 +15,9 @@ namespace Hovmand.ViewModel.Page
 
         public event PropertyChangedEventHandler PropertyChanged;
         private HovmanddbContext dbContext = HovmanddbContext.Instance;
-        private Contact _customer = new Contact();
+        private Contact _contact = new Contact();
         private CatalogBase<Contact> _contactCatalog;
-        public ContactViewModel(Contact contact = null)
+        public ContactViewModel()
         {
             _contactCatalog = new CatalogBase<Contact>();
             CreateContactCommand = new RelayCommand(CreateContact);
@@ -99,12 +99,14 @@ namespace Hovmand.ViewModel.Page
 
         private void UpdateContact()
         {
-
+            _contactCatalog.Update(_contact);
+            dbContext.SaveChanges();
         }
 
         private void CreateContact()
         {
-
+            _contactCatalog.Create(_contact);
+            dbContext.SaveChanges();
         }
 
         [NotifyPropertyChangedInvocator]
