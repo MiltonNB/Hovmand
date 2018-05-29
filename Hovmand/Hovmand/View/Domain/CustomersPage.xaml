@@ -27,7 +27,7 @@
     </Page.BottomAppBar>
 
     <Page.DataContext>
-        <vm:CustomerPageViewModel/>
+        <vm:CustomerViewModel/>
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
