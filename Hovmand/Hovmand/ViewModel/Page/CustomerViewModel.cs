@@ -27,8 +27,9 @@ namespace Hovmand.ViewModel.Page
         {
             _customerCatalog = new CatalogBase<Customer>();
             DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
-            UpdateCustomerCommand = new RelayCommand(UpdateCustomer);
-            CreateCustomerCommand = new RelayCommand(CreateCustomer);
+            NavUpdateCustomerCommand = new RelayCommand(NavUpdateCustomer);
+            NavCreateCustomerCommand = new RelayCommand(NavCreateCustomer);
+            NavCancelCreationCommand = new RelayCommand(NavCancelCreation);
             appVm = AppViewModel.AppVm;
             Customers.CollectionChanged += CollectionChanged;
 
@@ -38,8 +39,9 @@ namespace Hovmand.ViewModel.Page
         }
 
         public RelayCommand DeleteCustomerCommand { get; set; }
-        public RelayCommand UpdateCustomerCommand { get; set; }
-        public RelayCommand CreateCustomerCommand { get; set; }
+        public RelayCommand NavUpdateCustomerCommand { get; set; }
+        public RelayCommand NavCreateCustomerCommand { get; set; }
+        public RelayCommand NavCancelCreationCommand { get; set; }
 
         public Customer CustomerDomainObject
         {
@@ -146,7 +148,6 @@ namespace Hovmand.ViewModel.Page
             }
         }
 
-        public List<Customer> Customers
         public ObservableCollection<Customer> Customers
         {
             get { return new ObservableCollection<Customer>(_dbContext.Customers);}
@@ -160,14 +161,19 @@ namespace Hovmand.ViewModel.Page
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove));
         }
 
-        private void UpdateCustomer()
+        private void NavUpdateCustomer()
         {
             appVm.NavigationCommands["Customer"].Execute(null);
         }
 
-        private void CreateCustomer()
+        private void NavCreateCustomer()
         {
             appVm.NavigationCommands["Customer"].Execute(null);
+        }
+
+        private void NavCancelCreation()
+        {
+            appVm.NavigationCommands["Customers"].Execute(null);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
