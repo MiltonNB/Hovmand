@@ -29,7 +29,7 @@ namespace Hovmand.ViewModel.Page
             DeleteCustomerCommand = new RelayCommand(DeleteCustomer);
             UpdateCustomerCommand = new RelayCommand(UpdateCustomer);
             CreateCustomerCommand = new RelayCommand(CreateCustomer);
-            appVm = AppViewModel.appVm;
+            appVm = AppViewModel.AppVm;
             Customers.CollectionChanged += CollectionChanged;
 
             _customerCatalog.Create(new Customer() { Cvr = 1, CompanyName = "Test1", Address = "Test1", Phone = 1, Mail = "Test1", FkContactId = 4, FkLocationId = 4 });
