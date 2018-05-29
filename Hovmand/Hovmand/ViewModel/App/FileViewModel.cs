@@ -35,7 +35,7 @@ namespace Hovmand.ViewModel.App
             {
                 if (_isLoading)
                 {
-                    return "Loáding data...";
+                    return "Loading data...";
                 }
                 if (_isSaving)
                 {

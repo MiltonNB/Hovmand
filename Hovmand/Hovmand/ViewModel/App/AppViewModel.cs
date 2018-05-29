@@ -36,6 +36,33 @@ namespace Hovmand.ViewModel.App
 
         public override void AddCommands()
         {
+            NavigationCommands.Add("OverView", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.App.OverviewPage));
+            }));
+
+            NavigationCommands.Add("ActiveLeads", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.Domain.LeadsPage));
+            }));
+
+            NavigationCommands.Add("PendingLeads", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.Domain.LeadsPage));
+            }));
+        
+            NavigationCommands.Add("ClosedLeads", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.Domain.LeadsPage));
+            }));
+
+            NavigationCommands.Add("Customers", new RelayCommand(() =>
+            {
+                AppFrame.Navigate(typeof(View.Domain.CustomersPage));
+            }));
+
+            // FileViewBar
+
             NavigationCommands.Add("Add", new RelayCommand(() =>
             {
                 AppFrame.Navigate(typeof(FileView));
