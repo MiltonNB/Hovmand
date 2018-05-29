@@ -146,7 +146,7 @@ namespace Hovmand.ViewModel.Page
             }
         }
 
-        public List<Customer> Customers
+        
         public ObservableCollection<Customer> Customers
         {
             get { return new ObservableCollection<Customer>(_dbContext.Customers);}
