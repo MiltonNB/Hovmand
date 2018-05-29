@@ -69,7 +69,7 @@
                         </Grid>
                         <Grid Grid.Column="1" Margin="10">
                             <StackPanel>
-                                <CalendarDatePicker x:Name="expectedDelivery" Header="Expected delivery date" Height="60" MaxWidth="200" HorizontalAlignment="left" Date="{Binding FkPipeline.Date, Mode=TwoWay}"/>
+                                <CalendarDatePicker x:Name="expectedDelivery" Header="Expected delivery date" Height="60" MaxWidth="200" HorizontalAlignment="left" Date="{Binding FkPipeline.Date}"/>
                             </StackPanel>
                         </Grid>
                     </Grid>
