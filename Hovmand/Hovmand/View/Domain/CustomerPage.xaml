@@ -39,12 +39,12 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="companyNameInput" Header="Company Name:" Height="60" PlaceholderText="Enter company name" Width="auto"/>
+                            <TextBox x:Name="companyNameInput" Header="Company Name:" Height="60" PlaceholderText="Enter company name" Width="auto" Text="{Binding CompanyName}"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Column="1" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="cvrInput" Header="CVR:" Height="60"  PlaceholderText="Enter CVR" Width="auto"/>
+                            <TextBox x:Name="cvrInput" Header="CVR:" Height="60"  PlaceholderText="Enter CVR" Width="auto" Text="{Binding Cvr}"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -58,12 +58,12 @@
 
                     <Grid Grid.Column="0" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="firstNameInput" Header="First Name:" Height="60" PlaceholderText="Enter firstname" Width="auto"/>
+                            <TextBox x:Name="firstNameInput" Header="First Name:" Height="60" PlaceholderText="Enter firstname" Width="auto" Text="{Binding FkContact.Firstname}"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Column="1" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="lastNameInput" Header="Last Name:" Height="60"  PlaceholderText="Enter lastname" Width="auto"/>
+                            <TextBox x:Name="lastNameInput" Header="Last Name:" Height="60"  PlaceholderText="Enter lastname" Width="auto" Text="{Binding FkContact.Lastname}"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -77,12 +77,12 @@
 
                     <Grid Grid.Column="0" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="cityInput" Header="City:" Height="60" PlaceholderText="Enter City" Width="auto"/>
+                            <TextBox x:Name="cityInput" Header="City:" Height="60" PlaceholderText="Enter City" Width="auto" Text="{Binding FkLocation.City}"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Column="1" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="areacodeinput" Header="Area Code:" Height="60"  PlaceholderText="Enter Area Code" Width="auto"/>
+                            <TextBox x:Name="areacodeinput" Header="Area Code:" Height="60"  PlaceholderText="Enter Area Code" Width="auto" Text="{Binding FkLocation.Areacode}"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -96,12 +96,12 @@
 
                     <Grid Grid.Column="0" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="addressinput" Header="Address:" Height="60" PlaceholderText="Enter Address" Width="auto"/>
+                            <TextBox x:Name="addressinput" Header="Address:" Height="60" PlaceholderText="Enter Address" Width="auto" Text="{Binding Address}"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Column="1" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="emailinput" Header="Email:" Height="60"  PlaceholderText="Enter Email" Width="auto"/>
+                            <TextBox x:Name="emailinput" Header="Email:" Height="60"  PlaceholderText="Enter Email" Width="auto" Text="{Binding Mail}"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
@@ -115,7 +115,7 @@
 
                     <Grid Grid.Column="0" Margin="10">
                         <StackPanel>
-                            <TextBox x:Name="phoneinput" Header="Phone:" Height="60" PlaceholderText="Enter Phone" Width="auto"/>
+                            <TextBox x:Name="phoneinput" Header="Phone:" Height="60" PlaceholderText="Enter Phone" Width="auto" Text="{Binding Phone}"/>
                         </StackPanel>
                     </Grid>
                 </Grid>

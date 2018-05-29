@@ -1,18 +1,33 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using Commands.Implementation;
+using Hovmand.Annotations;
+using Hovmand.Model.Catalog.Base;
+using Hovmand.Model.Database;
 using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Page
 {
-    public class ContactViewModel : Base.DataViewModelBase<Contact>
+    public class ContactViewModel
     {
-        public ContactViewModel(Contact contact = null)
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private HovmanddbContext dbContext = HovmanddbContext.Instance;
+        private Contact _contact = new Contact();
+        private CatalogBase<Contact> _contactCatalog;
+        public ContactViewModel()
         {
-            ContactDomainObject = contact;
-            CreateCommand = new CreateCommand<Contact>();
-            DeleteCommand = new DeleteCommand<Contact>();
-            UpdateCommand = new UpdateCommand<Contact>();
+            _contactCatalog = new CatalogBase<Contact>();
+            CreateContactCommand = new RelayCommand(CreateContact);
+            DeleteContactCommand = new RelayCommand(DeleteContact);
+            UpdateContactCommand = new RelayCommand(UpdateContact);
         }
+
+        public RelayCommand DeleteContactCommand { get; set; }
+        public RelayCommand UpdateContactCommand { get; set; }
+        public RelayCommand CreateContactCommand { get; set; }
 
         public Contact ContactDomainObject { get; set; }
 
@@ -76,22 +91,29 @@ namespace Hovmand.ViewModel.Page
             }
         }
 
-        public ICommand CreateCommand
+        private void DeleteContact()
         {
-            get { return CreateCommand; }
-            set { CreateCommand = value; }
+            _contactCatalog.Delete(ContactId);
+            dbContext.SaveChanges();
         }
 
-        public ICommand DeleteCommand
+        private void UpdateContact()
         {
-            get { return DeleteCommand; }
-            set { DeleteCommand = value; }
+            _contactCatalog.Update(_contact);
+            dbContext.SaveChanges();
         }
 
-        public ICommand UpdateCommand
+        private void CreateContact()
         {
-            get { return UpdateCommand; }
-            set { UpdateCommand = value; }
+            _contactCatalog.Create(_contact);
+            dbContext.SaveChanges();
         }
+
+        [NotifyPropertyChangedInvocator]
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
-}
+    }

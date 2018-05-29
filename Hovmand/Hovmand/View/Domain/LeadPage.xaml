@@ -64,18 +64,18 @@
 
                         <Grid Grid.Column="0" Margin="10">
                             <StackPanel>
-                                <TextBox x:Name="productInput" Header="Product:" Height="60" PlaceholderText="Enter product" Width="auto"/>
+                                <TextBox x:Name="productInput" Header="Product:" Height="60" PlaceholderText="Enter product" Width="auto" Text="{}"/>
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10">
                             <StackPanel>
-                                <CalendarDatePicker x:Name="expectedDelivery" Header="Expected delivery date" Height="60" MaxWidth="200" HorizontalAlignment="left"/>
+                                <CalendarDatePicker x:Name="expectedDelivery" Header="Expected delivery date" Height="60" MaxWidth="200" HorizontalAlignment="left" Date="{Binding FkPipeline.Date, Mode=TwoWay}"/>
                             </StackPanel>
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10,10,0,0">
                         <StackPanel>
-                            <TextBox x:Name="InformationInput" Header="Information:"  PlaceholderText="Enter information" Height="400" Width="Auto"/>
+                            <TextBox x:Name="InformationInput" Header="Information:"  PlaceholderText="Enter information" Height="400" Width="Auto" Text="{Binding Information, Mode=TwoWay}"/>
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="3" Margin="10,10,0,0">
@@ -143,10 +143,10 @@
                             <TextBlock Text="Case" FontSize="20" Width="auto" Height="60" TextWrapping="Wrap" Margin="0,-20,0,-20"/>
                             <Rectangle  HorizontalAlignment="Stretch" VerticalAlignment="Center" Fill="Gray" Height="2" Margin="0,0,0,20"/>
                             <Grid Grid.Row="0" Margin="0,0,0,10">
-                                <ComboBox x:Name="status" Header="Status" Height="60" HorizontalAlignment="Stretch"/>
+                                <ComboBox x:Name="status" Header="Status" Height="60" HorizontalAlignment="Stretch" ItemsSource="{Binding FkPipeline.Status, Mode=TwoWay}"/>
                             </Grid>
                             <Grid Grid.Row="1">
-                                <ComboBox x:Name="caseOwner" Header="Case Owner" Height="60" HorizontalAlignment="Stretch"/>
+                                <ComboBox x:Name="caseOwner" Header="Case Owner" Height="60" HorizontalAlignment="Stretch" ItemsSource="{Binding FkUser.Firstname, Mode=TwoWay}"/>
                             </Grid>
                             <TextBlock Text="Pipeline" FontSize="20" Width="auto" Height="60" TextWrapping="Wrap" Margin="0,20,0,-20"/>
                             <Rectangle  HorizontalAlignment="Stretch" VerticalAlignment="Center" Fill="Gray" Height="2" Margin="0,0,0,20"/>
@@ -162,7 +162,7 @@
                                 </Grid>
                                 <Grid Grid.Row="1">
                                     <StackPanel>
-                                        <TextBox x:Name="PipelineInformationInput" Header="Pipeline Information:"  PlaceholderText="Enter pipeline information" Height="200" Margin="0,-25,0,0" Width="Auto"/>
+                                        <TextBox x:Name="PipelineInformationInput" Header="Pipeline Information:"  PlaceholderText="Enter pipeline information" Height="200" Margin="0,-25,0,0" Width="Auto" Text="{Binding FkPipeline.Information, Mode=TwoWay}"/>
                                     </StackPanel>
                                 </Grid>
                             </Grid>

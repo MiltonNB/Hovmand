@@ -126,6 +126,27 @@ namespace Hovmand.ViewModel.Page
             }
         }
 
+        public Contact FkContact
+        {
+            get { return CustomerDomainObject.FkContact; }
+            set
+            {
+                CustomerDomainObject.FkContact = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Location FkLocation
+        {
+            get { return CustomerDomainObject.FkLocation; }
+            set
+            {
+                CustomerDomainObject.FkLocation = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public List<Customer> Customers
         public ObservableCollection<Customer> Customers
         {
             get { return new ObservableCollection<Customer>(_dbContext.Customers);}
