@@ -5,10 +5,10 @@ using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class OfferDataViewModel : DataViewModelBase<Offer>
+    public class OfferViewModel : DataViewModelBase<Offer>
     {
 
-        public OfferDataViewModel(Offer offer = null)
+        public OfferViewModel(Offer offer = null)
         {
             OfferDomainObject = offer;
             CreateCommand = new CreateCommand<Offer>();

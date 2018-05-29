@@ -4,7 +4,7 @@ using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class ProductDataViewModel : DataViewModelBase<Product>
+    public class ProductViewModel : DataViewModelBase<Product>
     {
         private int _productId;
         private string _title;
@@ -12,7 +12,7 @@ namespace Hovmand.ViewModel.Data
         private double _price;
         private int _inStock;
 
-        public ProductDataViewModel(Product product = null)
+        public ProductViewModel(Product product = null)
         {
             ProductDomainObject = product;
             CreateCommand = new CreateCommand<Product>();

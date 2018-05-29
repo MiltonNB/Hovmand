@@ -4,9 +4,9 @@ using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class LocationDataViewModel : DataViewModelBase<Location>
+    public class LocationViewModel : DataViewModelBase<Location>
     {
-        public LocationDataViewModel(Location domainObject = null)
+        public LocationViewModel(Location domainObject = null)
         {
             LocationDomainObject = domainObject;
             CreateCommand = new CreateCommand<Location>();

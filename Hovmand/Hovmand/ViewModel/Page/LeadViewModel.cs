@@ -5,9 +5,9 @@ using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class LeadDataViewModel : DataViewModelBase<Lead>
+    public class LeadViewModel : DataViewModelBase<Lead>
     {
-        public LeadDataViewModel(Lead domainObject = null)
+        public LeadViewModel(Lead domainObject = null)
         {
             LeadDomainObject = domainObject;
             CreateCommand = new CreateCommand<Lead>();

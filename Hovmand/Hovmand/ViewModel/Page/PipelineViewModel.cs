@@ -5,9 +5,9 @@ using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class PipelineDataViewModel : DataViewModelBase<Pipeline>
+    public class PipelineViewModel : DataViewModelBase<Pipeline>
     {
-        public PipelineDataViewModel(Pipeline pipeline = null)
+        public PipelineViewModel(Pipeline pipeline = null)
         {
             PipelineDomainObject = pipeline;
             CreateCommand = new CreateCommand<Pipeline>();

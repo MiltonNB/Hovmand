@@ -4,16 +4,9 @@ using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class UserDataViewModel : DataViewModelBase<User>
+    public class UserViewModel : DataViewModelBase<User>
     {
-        private int _userId;
-        private string _firstname;
-        private string _lastname;
-        private string _title;
-        private string _email;
-        private string _password;
-
-        public UserDataViewModel(User user = null)
+        public UserViewModel(User user = null)
         {
             UserDomainObject = user;
             CreateCommand = new CreateCommand<User>();

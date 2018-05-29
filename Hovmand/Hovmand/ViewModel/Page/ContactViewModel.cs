@@ -8,9 +8,9 @@ using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Data
 {
-    public class ContactDataViewModel : Base.DataViewModelBase<Contact>
+    public class ContactViewModel : Base.DataViewModelBase<Contact>
     {
-        public ContactDataViewModel(Contact contact = null)
+        public ContactViewModel(Contact contact = null)
         {
             ContactDomainObject = contact;
             CreateCommand = new CreateCommand<Contact>();
