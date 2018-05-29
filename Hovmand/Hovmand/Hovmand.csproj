@@ -176,6 +176,7 @@
     <None Include="Hovmand_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\vars.txt" />
     <Content Include="Libraries\AddOns.dll" />
     <Content Include="Libraries\Commands.dll" />
     <Content Include="Libraries\Controllers.dll" />
