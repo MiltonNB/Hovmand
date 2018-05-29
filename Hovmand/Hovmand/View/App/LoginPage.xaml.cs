@@ -11,6 +11,7 @@ using Hovmand.Model.App;
 using Hovmand.Model.Catalog.Base;
 using Hovmand.Model.Catalog.DomainCatalogs;
 using Hovmand.Model.Database;
+using Hovmand.ViewModel.Page;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 

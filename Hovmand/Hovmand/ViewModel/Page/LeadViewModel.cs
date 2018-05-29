@@ -1,18 +1,22 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Hovmand.ViewModel.Base;
 using Hovmand.ViewModel.Commands;
 
 namespace Hovmand.ViewModel.Page
 {
-    public class LeadViewModel : DataViewModelBase<Lead>
+    public class LeadViewModel : INotifyPropertyChanged
     {
-        public LeadViewModel(Lead domainObject = null)
+        public event PropertyChangedEventHandler PropertyChanged;
+        private CreateCommand<Lead> _createCommand = new CreateCommand<Lead>();
+        private DeleteCommand<Lead> _deleteCommand = new DeleteCommand<Lead>();
+        private UpdateCommand<Lead> _updateCommand = new UpdateCommand<Lead>();
+
+        public LeadViewModel()
         {
-            LeadDomainObject = domainObject;
-            CreateCommand = new CreateCommand<Lead>();
-            DeleteCommand = new DeleteCommand<Lead>();
-            UpdateCommand = new UpdateCommand<Lead>();
+
         }
 
         public Lead LeadDomainObject { get; set; }
@@ -89,20 +93,22 @@ namespace Hovmand.ViewModel.Page
 
         public ICommand CreateCommand
         {
-            get { return CreateCommand; }
-            set { CreateCommand = value; }
+            get { return _createCommand; }
         }
 
         public ICommand DeleteCommand
         {
-            get { return DeleteCommand; }
-            set { DeleteCommand = value; }
+            get { return _deleteCommand; }
         }
 
         public ICommand UpdateCommand
         {
-            get { return UpdateCommand; }
-            set { UpdateCommand = value; }
+            get { return _updateCommand; }
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

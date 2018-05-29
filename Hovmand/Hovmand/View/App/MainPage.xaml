@@ -28,7 +28,7 @@
                         SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}"
                         ExpandedModeThresholdWidth="3840">
             <NavigationView.MenuItems>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Globe" Content="OverView" Tag="OverView"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Globe" Content="LeadsPage" Tag="LeadsPage"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Forward" Content="Active" Tag="ActiveLeads"/>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Back" Content="Pending" Tag="PendingLeads"/>

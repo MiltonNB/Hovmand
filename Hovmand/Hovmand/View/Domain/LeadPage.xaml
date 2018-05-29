@@ -7,6 +7,20 @@
     xmlns:page="using:Hovmand.ViewModel.Page"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <page:LeadViewModel/>
+    </Page.DataContext>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Save" Label="Save" 
+                          Command="{Binding CreateCommand}"/>
+            <AppBarButton Icon="Cancel" Label="Cancel"/>
+            <AppBarButton Icon="Delete" Label="Delete" 
+                          Command="{Binding DeleteCommand}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ScrollViewer>
             <Grid>

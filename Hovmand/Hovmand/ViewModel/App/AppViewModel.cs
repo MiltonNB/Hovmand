@@ -36,9 +36,9 @@ namespace Hovmand.ViewModel.App
 
         public override void AddCommands()
         {
-            NavigationCommands.Add("OverView", new RelayCommand(() =>
+            NavigationCommands.Add("LeadsPage", new RelayCommand(() =>
             {
-                AppFrame.Navigate(typeof(View.App.OverviewPage));
+                AppFrame.Navigate(typeof(View.Domain.LeadsPage));
             }));
 
             NavigationCommands.Add("ActiveLeads", new RelayCommand(() =>
