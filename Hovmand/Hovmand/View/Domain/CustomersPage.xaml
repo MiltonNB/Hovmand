@@ -6,14 +6,31 @@
     xmlns:vm="using:Hovmand.ViewModel.Page"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar Style="{StaticResource CommandBarStyle}">
+            <CommandBar.Content>
+                <TextBlock Style="{StaticResource TextBlockCommandContentStyle}"
+                           Text="{Binding ViewStateDescription}" />
+            </CommandBar.Content>
+            <AppBarButton Icon="Add" Label="Create" 
+                          IsEnabled="{Binding ControlStates[CreateControl].Enabled}"
+                          Command="{Binding DataCommand[CreateCommand]}"/>
+            <AppBarButton Icon="Edit" Label="Update" 
+                          IsEnabled="{Binding ControlStates[UpdateControl].Enabled}"
+                          Command="{Binding DataCommand[UpdateCommand]}"/>
+            <AppBarButton Icon="Delete" Label="Delete" 
+                          IsEnabled="{Binding ControlStates[DeleteControl].Enabled}"
+                          Command="{Binding DataCommand[DeleteCommand]}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 
     <Page.DataContext>
         <vm:CustomerPageViewModel/>
     </Page.DataContext>
 
-    <Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView ItemsSource="{Binding Customers}">
             <ListView.HeaderTemplate>
                 <DataTemplate>
