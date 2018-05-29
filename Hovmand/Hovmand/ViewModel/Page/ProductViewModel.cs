@@ -6,12 +6,6 @@ namespace Hovmand.ViewModel.Data
 {
     public class ProductViewModel : DataViewModelBase<Product>
     {
-        private int _productId;
-        private string _title;
-        private string _information;
-        private double _price;
-        private int _inStock;
-
         public ProductViewModel(Product product = null)
         {
             ProductDomainObject = product;
