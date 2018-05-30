@@ -18,23 +18,30 @@ namespace Hovmand.Model.Catalog.Base
 
         public void Create(T obj)
         {
-            _dbContext.Set<T>().Add(obj);
+            if (obj != null)
+                _dbContext.Set<T>().Add(obj);
         }
 
         public object Read(int key)
         {
-            return _dbContext.Set<T>().Find(key);
+            if (key != 0)
+                return _dbContext.Set<T>().Find(key);
+            return null;
         }
 
         public void Update(T obj)
         {
-            _dbContext.Set<T>().Update(obj);
+            if (obj != null)
+                _dbContext.Set<T>().Update(obj);
         }
 
         public void Delete(int key)
         {
-            var obj = _dbContext.Set<T>().Find(key);
-            _dbContext.Set<T>().Remove(obj);
+            if (key != 0)
+            {
+                var obj = _dbContext.Set<T>().Find(key);
+                _dbContext.Set<T>().Remove(obj);
+            }
         }
     }
 }

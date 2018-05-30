@@ -13,7 +13,7 @@ namespace Hovmand.Model.App
         {
             var inputBytes = Encoding.ASCII.GetBytes(input); //Starter med at lave input string om til bytes, da du ikke kan hashe strings, men derimod bytes
             var inputHashed = _sha1Provider.ComputeHash(inputBytes); //Laver det egentlige hash fra bytes
-            var outputHashed = BitConverter.ToString(inputHashed).Replace("-","").ToLower(); //Laver det tilbage om til en string så det er læseligt
+            var outputHashed = BitConverter.ToString(inputHashed).Replace("-","").ToLower(); //Fjerner '-' karakterer
             return outputHashed; //Returnerer den endelige string
         }
 
