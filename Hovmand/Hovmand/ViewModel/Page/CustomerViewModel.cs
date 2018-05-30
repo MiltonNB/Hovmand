@@ -32,9 +32,6 @@ namespace Hovmand.ViewModel.Page
             NavCancelCreationCommand = new RelayCommand(NavCancelCreation);
             appVm = AppViewModel.AppVm;
             Customers.CollectionChanged += CollectionChanged;
-
-            _customerCatalog.Create(new Customer() { Cvr = 1, CompanyName = "Test1", Address = "Test1", Phone = 1, Mail = "Test1", FkContactId = 4, FkLocationId = 4 });
-            _customerCatalog.Create(new Customer() { Cvr = 2, CompanyName = "Test2", Address = "Test2", Phone = 2, Mail = "Test2", FkContactId = 4, FkLocationId = 4 });
             _dbContext.SaveChanges();
         }
 
