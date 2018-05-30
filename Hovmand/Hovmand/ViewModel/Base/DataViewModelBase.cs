@@ -1,6 +1,6 @@
-﻿using System.ComponentModel;
+﻿using Hovmand.Annotations;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Hovmand.Annotations;
 
 namespace Hovmand.ViewModel.Base
 {

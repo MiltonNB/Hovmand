@@ -114,7 +114,6 @@
     <Compile Include="Model\Catalog\DomainCatalogs\PipelineCatalog.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\ProductCatalog.cs" />
     <Compile Include="Model\Catalog\DomainCatalogs\UserCatalog.cs" />
-    <Compile Include="Model\StatusEnum.cs" />
     <Compile Include="Model\Domain\Offer.cs" />
     <Compile Include="Model\Domain\Pipeline.cs" />
     <Compile Include="Model\Domain\Product.cs" />
@@ -122,10 +121,6 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="UnitTests.cs" />
     <Compile Include="ViewModel\App\AppViewModel.cs" />
-    <Compile Include="ViewModel\App\DBHandler.cs" />
-    <Compile Include="ViewModel\App\EmailHandler.cs" />
-    <Compile Include="ViewModel\App\FileViewModel.cs" />
-    <Compile Include="ViewModel\App\LockHandler.cs" />
     <Compile Include="ViewModel\Base\DataViewModelBase.cs" />
     <Compile Include="ViewModel\Commands\CreateCommand.cs" />
     <Compile Include="ViewModel\Commands\DeleteCommand.cs" />

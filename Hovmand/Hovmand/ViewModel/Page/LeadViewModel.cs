@@ -16,7 +16,7 @@ namespace Hovmand.ViewModel.Page
 
         public LeadViewModel()
         {
-
+            LeadDomainObject = new Lead();
         }
 
         public Lead LeadDomainObject { get; set; }

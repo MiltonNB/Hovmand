@@ -34,6 +34,8 @@ namespace Hovmand.View.App
             pwHash = new PasswordHash();
             task = new Task(() => userList = dbContext.Users.ToList());
             task.Start();
+            UsernameTextBox.Text = "admin";
+            PasswordTextBox.Text = "admin";
         }
 
         private void SignInButton_Click(object sender, RoutedEventArgs e)
