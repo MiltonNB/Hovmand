@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using Windows.UI.Popups;
 using Commands.Implementation;
 using Hovmand.Annotations;
 using Hovmand.Model.Catalog.Base;
@@ -30,12 +32,14 @@ namespace Hovmand.ViewModel.Page
             NavUpdateCustomerCommand = new RelayCommand(NavUpdateCustomer);
             NavCreateCustomerCommand = new RelayCommand(NavCreateCustomer);
             NavCancelCreationCommand = new RelayCommand(NavCancelCreation);
+            SaveCustomerCommand = new RelayCommand(SaveCustomer);
             appVm = AppViewModel.AppVm;
             Customers.CollectionChanged += CollectionChanged;
             _dbContext.SaveChanges();
         }
 
         public RelayCommand DeleteCustomerCommand { get; set; }
+        public RelayCommand SaveCustomerCommand { get; set; }
         public RelayCommand NavUpdateCustomerCommand { get; set; }
         public RelayCommand NavCreateCustomerCommand { get; set; }
         public RelayCommand NavCancelCreationCommand { get; set; }
@@ -150,12 +154,42 @@ namespace Hovmand.ViewModel.Page
             get { return new ObservableCollection<Customer>(_dbContext.Customers);}
         }
 
-        private void DeleteCustomer()
+        private void SaveCustomer()
         {
-            if (CustomerId == 0) return;
+            var customer = new Customer()
+            {
+                Cvr = Cvr,
+                CompanyName = CompanyName,
+                Address = Address,
+                Phone = Phone,
+                Mail = Mail,
+                FkContactId = 4,
+                FkLocationId = 4,
+            };
+            _customerCatalog.Create(customer);
+            _dbContext.SaveChanges();
+            NavCancelCreation();
+        }
+
+        private async void DeleteCustomer()
+        {
+            var dialog = new MessageDialog("Are you sure you want to delete?", "Delete");
+            int NO = 0;
+            int YES = 1;
+
+            dialog.Commands.Add(new UICommand { Label = "No", Id = NO });
+            dialog.Commands.Add(new UICommand { Label = "Yes", Id = YES });
+
+            var result = await dialog.ShowAsync();
+            if ((int)result.Id == 0)
+                return;
+            if (CustomerId == 0)
+                return;
+
             _customerCatalog.Delete(CustomerId);
             _dbContext.SaveChanges();
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove));
+            NavCancelCreation();
         }
 
         private void NavUpdateCustomer()
