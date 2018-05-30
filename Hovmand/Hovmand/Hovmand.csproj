@@ -120,6 +120,7 @@
     <Compile Include="Model\Domain\Product.cs" />
     <Compile Include="Model\Domain\User.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="UnitTests.cs" />
     <Compile Include="ViewModel\App\AppViewModel.cs" />
     <Compile Include="ViewModel\App\DBHandler.cs" />
     <Compile Include="ViewModel\App\EmailHandler.cs" />
